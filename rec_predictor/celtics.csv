@@ -1,0 +1,315 @@
+,TeamID,SEASON,LeagueID,PLAYER,NICKNAME,PLAYER_SLUG,NUM,POSITION,HEIGHT,WEIGHT,BIRTH_DATE,AGE,EXP,SCHOOL,PLAYER_ID
+0,1610612738,2000,00,Walter McCarty,Walter,walter-mccarty,0,F,6-10,230,"FEB 01, 1974",27.0,4,Kentucky,962
+1,1610612738,2000,00,Tony Battie,Tony,tony-battie,4,C-F,6-11,240,"FEB 11, 1976",25.0,3,Texas Tech,1499
+2,1610612738,2000,00,Jerome Moiso,Jerome,jerome-moiso,5,F,6-10,232,"JUN 15, 1978",23.0,R,UCLA,2040
+3,1610612738,2000,00,Antoine Walker,Antoine,antoine-walker,8,F,6-9,245,"AUG 12, 1976",24.0,4,Kentucky,952
+4,1610612738,2000,00,Milt Palacio,Milt,milt-palacio,9,G,6-3,195,"FEB 07, 1978",23.0,1,Colorado State,1960
+5,1610612738,2000,00,Chris Herren,Chris,chris-herren,12,G,6-2,190,"SEP 27, 1975",25.0,1,Fresno State,1914
+6,1610612738,2000,00,Bryant Stith,Bryant,bryant-stith,20,G,6-5,210,"DEC 10, 1970",30.0,8,Virginia,179
+7,1610612738,2000,00,Mark Blount,Mark,mark-blount,30,C,7-0,230,"NOV 30, 1975",25.0,R,Pittsburgh,1548
+8,1610612738,2000,00,Paul Pierce,Paul,paul-pierce,34,F-G,6-6,230,"OCT 13, 1977",23.0,2,Kansas,1718
+9,1610612738,2000,00,Adrian Griffin,Adrian,adrian-griffin,44,G-F,6-5,215,"JUL 04, 1974",26.0,1,Seton Hall,1559
+10,1610612738,2000,00,Vitaly Potapenko,Vitaly,vitaly-potapenko,52,C-F,6-10,285,"MAR 21, 1975",26.0,4,Wright State,958
+11,1610612738,2000,00,Eric Williams,Eric,eric-williams,55,F,6-8,220,"JUL 17, 1972",28.0,5,Providence,677
+0,1610612738,2001,00,Walter McCarty,Walter,walter-mccarty,0,F,6-10,230,"FEB 01, 1974",28.0,5,Kentucky,962
+1,1610612738,2001,00,Tony Battie,Tony,tony-battie,4,C-F,6-11,240,"FEB 11, 1976",26.0,4,Texas Tech,1499
+2,1610612738,2001,00,Kenny Anderson,Kenny,kenny-anderson,7,G,6-1,168,"OCT 09, 1970",31.0,10,Georgia Tech,72
+3,1610612738,2001,00,Antoine Walker,Antoine,antoine-walker,8,F,6-9,245,"AUG 12, 1976",25.0,5,Kentucky,952
+4,1610612738,2001,00,Omar Cook,Omar,omar-cook,12,G,6-1,190,"JAN 28, 1982",20.0,R,St. John's,2241
+5,1610612738,2001,00,Erick Strickland,Erick,erick-strickland,20,G,6-3,218,"NOV 25, 1973",28.0,5,Nebraska,1065
+6,1610612738,2001,00,Tony Delk,Tony,tony-delk,28,G,6-2,189,"JAN 28, 1974",28.0,5,Kentucky,960
+7,1610612738,2001,00,Mark Blount,Mark,mark-blount,30,C,7-0,250,"NOV 30, 1975",26.0,1,Pittsburgh,1548
+8,1610612738,2001,00,Paul Pierce,Paul,paul-pierce,34,F-G,6-6,230,"OCT 13, 1977",24.0,3,Kansas,1718
+9,1610612738,2001,00,Kedrick Brown,Kedrick,kedrick-brown,42,G-F,6-7,222,"MAR 18, 1981",21.0,R,Northwest Florida State,2208
+10,1610612738,2001,00,Vitaly Potapenko,Vitaly,vitaly-potapenko,52,C-F,6-10,285,"MAR 21, 1975",27.0,5,Wright State,958
+11,1610612738,2001,00,Rodney Rogers,Rodney,rodney-rogers,54,F,6-7,255,"JUN 20, 1971",31.0,8,Wake Forest,915
+12,1610612738,2001,00,Eric Williams,Eric,eric-williams,55,G-F,6-8,220,"JUL 17, 1972",29.0,6,Providence,677
+0,1610612738,2002,00,Walter McCarty,Walter,walter-mccarty,0,F,6-10,230,"FEB 01, 1974",29.0,6,Kentucky,962
+1,1610612738,2002,00,Tony Battie,Tony,tony-battie,4,C-F,6-11,240,"FEB 11, 1976",27.0,5,Texas Tech,1499
+2,1610612738,2002,00,Kedrick Brown,Kedrick,kedrick-brown,5,G-F,6-7,222,"MAR 18, 1981",22.0,1,Northwest Florida State,2208
+3,1610612738,2002,00,Tony Delk,Tony,tony-delk,7,G,6-2,189,"JAN 28, 1974",29.0,6,Kentucky,960
+4,1610612738,2002,00,Antoine Walker,Antoine,antoine-walker,8,F,6-9,245,"AUG 12, 1976",26.0,6,Kentucky,952
+5,1610612738,2002,00,J.R. Bremer,J.R.,jr-bremer,9,G,6-2,185,"SEP 19, 1980",22.0,R,St. Bonaventure,2452
+6,1610612738,2002,00,Shammond Williams,Shammond,shammond-williams,11,G,6-1,201,"APR 05, 1975",28.0,4,North Carolina,1742
+7,1610612738,2002,00,Paul Pierce,Paul,paul-pierce,34,F-G,6-6,230,"OCT 13, 1977",25.0,4,Kansas,1718
+8,1610612738,2002,00,Bruno Sundov,Bruno,bruno-sundov,41,C,7-2,246,"FEB 10, 1980",23.0,4,Split,1743
+9,1610612738,2002,00,Vin Baker,Vin,vin-baker,42,F,6-11,250,"NOV 23, 1971",31.0,9,Hartford,452
+10,1610612738,2002,00,Ruben Wolkowyski,Ruben,ruben-wolkowyski,45,F,6-10,275,"SEP 30, 1973",29.0,1,Estudiantes de Olavarria,2106
+11,1610612738,2002,00,Eric Williams,Eric,eric-williams,55,G-F,6-8,220,"JUL 17, 1972",30.0,7,Providence,677
+0,1610612738,2003,00,Dana Barros,Dana,dana-barros,,G,5-11,165,"APR 13, 1967",37.0,13,Boston College,344
+1,1610612738,2003,00,Walter McCarty,Walter,walter-mccarty,0,F,6-10,230,"FEB 01, 1974",30.0,7,Kentucky,962
+2,1610612738,2003,00,Chris Mihm,Chris,chris-mihm,4,C-F,7-0,265,"JUL 16, 1979",24.0,3,Texas-Austin,2036
+3,1610612738,2003,00,Michael Stewart,Michael,michael-stewart,5,F,6-10,230,"APR 25, 1975",29.0,6,California,1565
+4,1610612738,2003,00,Chucky Atkins,Chucky,chucky-atkins,7,G,5-11,160,"AUG 14, 1974",29.0,4,South Florida,1088
+5,1610612738,2003,00,Marcus Banks,Marcus,marcus-banks,11,G,6-2,200,"NOV 19, 1981",22.0,R,UNLV,2556
+6,1610612738,2003,00,Ricky Davis,Ricky,ricky-davis,12,G,6-7,195,"SEP 23, 1979",24.0,5,Iowa,1729
+7,1610612738,2003,00,Jumaine Jones,Jumaine,jumaine-jones,20,F,6-8,218,"FEB 10, 1979",25.0,4,Georgia,1908
+8,1610612738,2003,00,Mark Blount,Mark,mark-blount,30,C,7-0,250,"NOV 30, 1975",28.0,3,Pittsburgh,1548
+9,1610612738,2003,00,Paul Pierce,Paul,paul-pierce,34,G-F,6-6,230,"OCT 13, 1977",26.0,5,Kansas,1718
+10,1610612738,2003,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,280,"NOV 10, 1984",19.0,R,Clifton J. Ozen HS (TX),2570
+11,1610612738,2003,00,Jiri Welsch,Jiri,jiri-welsch,44,F-G,6-7,208,"JAN 27, 1980",24.0,1,Union Olimpija,2412
+12,1610612738,2003,00,Raef LaFrentz,Raef,raef-lafrentz,45,C-F,6-11,245,"MAY 29, 1976",28.0,5,Kansas,1711
+13,1610612738,2003,00,Ernest Brown,Ernest,ernest-brown,52,C,7-0,244,"MAY 17, 1979",25.0,1,Indian Hills C.C.,2081
+14,1610612738,2003,00,Brandon Hunter,Brandon,brandon-hunter,56,F,6-7,260,"NOV 24, 1980",23.0,R,Ohio,2599
+0,1610612738,2004,00,Al Jefferson,Al,al-jefferson,7,F,6-10,265,"JAN 04, 1985",20.0,R,Prentiss HS (MS),2744
+1,1610612738,2004,00,Antoine Walker,Antoine,antoine-walker,8,F,6-9,245,"AUG 12, 1976",28.0,8,Kentucky,952
+2,1610612738,2004,00,Justin Reed,Justin,justin-reed,9,F,6-8,240,"JAN 16, 1982",23.0,R,Mississippi,2770
+3,1610612738,2004,00,Marcus Banks,Marcus,marcus-banks,11,G,6-2,200,"NOV 19, 1981",23.0,1,UNLV,2556
+4,1610612738,2004,00,Ricky Davis,Ricky,ricky-davis,12,F,6-7,195,"SEP 23, 1979",25.0,6,Iowa,1729
+5,1610612738,2004,00,Delonte West,Delonte,delonte-west,13,G,6-4,180,"JUL 26, 1983",21.0,R,St. Joseph's (PA),2753
+6,1610612738,2004,00,Gary Payton,Gary,gary-payton,20,G,6-4,180,"JUL 23, 1968",36.0,14,Oregon State,56
+7,1610612738,2004,00,Mark Blount,Mark,mark-blount,30,C,7-0,250,"NOV 30, 1975",29.0,4,Pittsburgh,1548
+8,1610612738,2004,00,Paul Pierce,Paul,paul-pierce,34,F-G,6-6,230,"OCT 13, 1977",27.0,6,Kansas,1718
+9,1610612738,2004,00,Tony Allen,Tony,tony-allen,42,G,6-4,213,"JAN 11, 1982",23.0,R,Oklahoma State,2754
+10,1610612738,2004,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,280,"NOV 10, 1984",20.0,1,Clifton J. Ozen HS (TX),2570
+11,1610612738,2004,00,Raef LaFrentz,Raef,raef-lafrentz,45,F,6-11,245,"MAY 29, 1976",29.0,6,Kansas,1711
+0,1610612738,2005,00,Orien Greene,Orien,orien-greene,0,G,6-4,208,"FEB 04, 1982",24.0,R,Louisiana-Lafayette,101158
+1,1610612738,2005,00,Ryan Gomes,Ryan,ryan-gomes,4,F,6-7,250,"SEP 01, 1982",23.0,R,Providence,101155
+2,1610612738,2005,00,Gerald Green,Gerald,gerald-green,5,G-F,6-8,200,"JAN 26, 1986",20.0,R,No College,101123
+3,1610612738,2005,00,Al Jefferson,Al,al-jefferson,7,F,6-10,265,"JAN 04, 1985",21.0,1,Prentiss HS (MS),2744
+4,1610612738,2005,00,Delonte West,Delonte,delonte-west,13,G,6-4,180,"JUL 26, 1983",22.0,1,St. Joseph's (PA),2753
+5,1610612738,2005,00,Dan Dickau,Dan,dan-dickau,20,G,6-0,190,"SEP 16, 1978",27.0,3,Gonzaga,2424
+6,1610612738,2005,00,Dwayne Jones,Dwayne,dwayne-jones,27,F-C,6-11,250,"JUN 09, 1983",23.0,R,St. Joseph's (PA),101204
+7,1610612738,2005,00,Paul Pierce,Paul,paul-pierce,34,F-G,6-6,230,"OCT 13, 1977",28.0,7,Kansas,1718
+8,1610612738,2005,00,Michael Olowokandi,Michael,michael-olowokandi,41,C,7-0,270,"APR 03, 1975",31.0,7,Pacific,1709
+9,1610612738,2005,00,Tony Allen,Tony,tony-allen,42,G,6-4,213,"JAN 11, 1982",24.0,1,Oklahoma State,2754
+10,1610612738,2005,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,280,"NOV 10, 1984",21.0,2,Clifton J. Ozen HS (TX),2570
+11,1610612738,2005,00,Brian Scalabrine,Brian,brian-scalabrine,44,F,6-9,235,"MAR 18, 1978",28.0,4,Southern California,2243
+12,1610612738,2005,00,Raef LaFrentz,Raef,raef-lafrentz,45,F,6-11,245,"MAY 29, 1976",30.0,7,Kansas,1711
+13,1610612738,2005,00,Wally Szczerbiak,Wally,wally-szczerbiak,55,F,6-7,244,"MAR 05, 1977",29.0,6,Miami (Ohio),1887
+0,1610612738,2006,00,Leon Powe,Leon,leon-powe,0,F,6-8,240,"JAN 22, 1984",23.0,R,California,200796
+1,1610612738,2006,00,Ryan Gomes,Ryan,ryan-gomes,4,F,6-7,250,"SEP 01, 1982",24.0,1,Providence,101155
+2,1610612738,2006,00,Gerald Green,Gerald,gerald-green,5,G-F,6-8,200,"JAN 26, 1986",21.0,1,No College,101123
+3,1610612738,2006,00,Al Jefferson,Al,al-jefferson,7,F-C,6-10,256,"JAN 04, 1985",22.0,2,Prentiss HS (MS),2744
+4,1610612738,2006,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,171,"FEB 22, 1986",21.0,R,Kentucky,200765
+5,1610612738,2006,00,Allan Ray,Allan,allan-ray,12,G,6-2,190,"JUN 17, 1984",23.0,R,Villanova,200810
+6,1610612738,2006,00,Delonte West,Delonte,delonte-west,13,G,6-4,180,"JUL 26, 1983",23.0,2,St. Joseph's (PA),2753
+7,1610612738,2006,00,Sebastian Telfair,Sebastian,sebastian-telfair,30,G,6-0,160,"JUN 09, 1985",22.0,2,Abraham Lincoln HS (NY),2742
+8,1610612738,2006,00,Paul Pierce,Paul,paul-pierce,34,G-F,6-6,230,"OCT 13, 1977",29.0,8,Kansas,1718
+9,1610612738,2006,00,Michael Olowokandi,Michael,michael-olowokandi,41,C,7-0,270,"APR 03, 1975",32.0,8,Pacific,1709
+10,1610612738,2006,00,Tony Allen,Tony,tony-allen,42,G,6-4,213,"JAN 11, 1982",25.0,2,Oklahoma State,2754
+11,1610612738,2006,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,280,"NOV 10, 1984",22.0,3,Clifton J. Ozen HS (TX),2570
+12,1610612738,2006,00,Brian Scalabrine,Brian,brian-scalabrine,44,F-C,6-9,235,"MAR 18, 1978",29.0,5,Southern California,2243
+13,1610612738,2006,00,Theo Ratliff,Theo,theo-ratliff,50,C-F,6-10,235,"APR 17, 1973",34.0,11,Wyoming,689
+14,1610612738,2006,00,Wally Szczerbiak,Wally,wally-szczerbiak,55,F,6-7,244,"MAR 05, 1977",30.0,7,Miami (Ohio),1887
+0,1610612738,2007,00,Leon Powe,Leon,leon-powe,0,F,6-8,240,"JAN 22, 1984",24.0,1,California,200796
+1,1610612738,2007,00,Kevin Garnett,Kevin,kevin-garnett,5,F,6-11,220,"MAY 19, 1976",32.0,12,Farragut Academy HS (IL),708
+2,1610612738,2007,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,171,"FEB 22, 1986",22.0,1,Kentucky,200765
+3,1610612738,2007,00,Glen Davis,Glen,glen-davis,11,F,6-9,289,"JAN 01, 1986",22.0,R,Louisiana State,201175
+4,1610612738,2007,00,Gabe Pruitt,Gabe,gabe-pruitt,13,G,6-4,170,"APR 19, 1986",22.0,R,Southern California,201172
+5,1610612738,2007,00,Ray Allen,Ray,ray-allen,20,G,6-5,205,"JUL 20, 1975",32.0,11,Connecticut,951
+6,1610612738,2007,00,Sam Cassell,Sam,sam-cassell,28,G,6-3,185,"NOV 18, 1969",38.0,14,Florida State,208
+7,1610612738,2007,00,Paul Pierce,Paul,paul-pierce,34,F,6-7,235,"OCT 13, 1977",30.0,9,Kansas,1718
+8,1610612738,2007,00,James Posey,James,james-posey,41,F,6-8,217,"JAN 13, 1977",31.0,8,Xavier,1899
+9,1610612738,2007,00,Tony Allen,Tony,tony-allen,42,G,6-4,213,"JAN 11, 1982",26.0,3,Oklahoma State,2754
+10,1610612738,2007,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,264,"NOV 10, 1984",23.0,4,Clifton J. Ozen HS (TX),2570
+11,1610612738,2007,00,Brian Scalabrine,Brian,brian-scalabrine,44,F-C,6-9,235,"MAR 18, 1978",30.0,6,Southern California,2243
+12,1610612738,2007,00,Eddie House,Eddie,eddie-house,50,G,6-1,175,"MAY 14, 1978",30.0,7,Arizona State,2067
+13,1610612738,2007,00,Scot Pollard,Scot,scot-pollard,66,C-F,6-11,278,"FEB 12, 1975",33.0,10,Kansas,1513
+14,1610612738,2007,00,P.J. Brown,P.J.,pj-brown,93,F-C,6-11,239,"OCT 14, 1969",38.0,14,Louisiana Tech,136
+0,1610612738,2008,00,Leon Powe,Leon,leon-powe,0,F,6-8,240,"JAN 22, 1984",25.0,2,California,200796
+1,1610612738,2008,00,J.R. Giddens,J.R.,jr-giddens,4,G,6-5,215,"FEB 13, 1985",24.0,R,New Mexico,201592
+2,1610612738,2008,00,Kevin Garnett,Kevin,kevin-garnett,5,F,6-11,253,"MAY 19, 1976",33.0,13,Farragut Academy HS (IL),708
+3,1610612738,2008,00,Mikki Moore,Mikki,mikki-moore,7,F-C,7-0,225,"NOV 04, 1975",33.0,10,Nebraska,1630
+4,1610612738,2008,00,Stephon Marbury,Stephon,stephon-marbury,8,G,6-2,205,"FEB 20, 1977",32.0,12,Georgia Tech,950
+5,1610612738,2008,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,171,"FEB 22, 1986",23.0,2,Kentucky,200765
+6,1610612738,2008,00,Glen Davis,Glen,glen-davis,11,F,6-9,289,"JAN 01, 1986",23.0,1,Louisiana State,201175
+7,1610612738,2008,00,Henry Walker,Henry,henry-walker,12,G-F,6-6,220,"OCT 09, 1987",21.0,R,Kansas State,201611
+8,1610612738,2008,00,Gabe Pruitt,Gabe,gabe-pruitt,13,G,6-4,170,"APR 19, 1986",23.0,1,Southern California,201172
+9,1610612738,2008,00,Ray Allen,Ray,ray-allen,20,G,6-5,205,"JUL 20, 1975",33.0,12,Connecticut,951
+10,1610612738,2008,00,Paul Pierce,Paul,paul-pierce,34,F,6-7,235,"OCT 13, 1977",31.0,10,Kansas,1718
+11,1610612738,2008,00,Tony Allen,Tony,tony-allen,42,G,6-4,213,"JAN 11, 1982",27.0,4,Oklahoma State,2754
+12,1610612738,2008,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,280,"NOV 10, 1984",24.0,5,Clifton J. Ozen HS (TX),2570
+13,1610612738,2008,00,Brian Scalabrine,Brian,brian-scalabrine,44,C-F,6-9,235,"MAR 18, 1978",31.0,7,Southern California,2243
+14,1610612738,2008,00,Eddie House,Eddie,eddie-house,50,G,6-1,175,"MAY 14, 1978",31.0,8,Arizona State,2067
+0,1610612738,2009,00,Tony Gaffney,Tony,tony-gaffney,,F,6-8,205,"NOV 14, 1984",25.0,R,Massachusetts,202070
+1,1610612738,2009,00,Oliver Lafayette,Oliver,oliver-lafayette,0,G,6-2,190,"MAY 06, 1984",26.0,R,Houston,201802
+2,1610612738,2009,00,Nate Robinson,Nate,nate-robinson,4,G,5-9,180,"MAY 31, 1984",26.0,4,Washington,101126
+3,1610612738,2009,00,Kevin Garnett,Kevin,kevin-garnett,5,F,6-11,253,"MAY 19, 1976",34.0,14,Farragut Academy HS (IL),708
+4,1610612738,2009,00,Marquis Daniels,Marquis,marquis-daniels,7,G,6-6,200,"JAN 07, 1981",29.0,6,Auburn,2605
+5,1610612738,2009,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,171,"FEB 22, 1986",24.0,3,Kentucky,200765
+6,1610612738,2009,00,Glen Davis,Glen,glen-davis,11,F,6-9,289,"JAN 01, 1986",24.0,2,Louisiana State,201175
+7,1610612738,2009,00,Shelden Williams,Shelden,shelden-williams,13,F-C,6-9,250,"OCT 21, 1983",26.0,3,Duke,200749
+8,1610612738,2009,00,Ray Allen,Ray,ray-allen,20,G,6-5,205,"JUL 20, 1975",34.0,13,Connecticut,951
+9,1610612738,2009,00,Rasheed Wallace,Rasheed,rasheed-wallace,30,F-C,6-11,230,"SEP 17, 1974",35.0,14,North Carolina,739
+10,1610612738,2009,00,Paul Pierce,Paul,paul-pierce,34,F,6-7,235,"OCT 13, 1977",32.0,11,Kansas,1718
+11,1610612738,2009,00,Michael Finley,Michael,michael-finley,40,G-F,6-7,225,"MAR 06, 1973",37.0,14,Wisconsin,714
+12,1610612738,2009,00,Tony Allen,Tony,tony-allen,42,G,6-4,213,"JAN 11, 1982",28.0,5,Oklahoma State,2754
+13,1610612738,2009,00,Kendrick Perkins,Kendrick,kendrick-perkins,43,C,6-10,280,"NOV 10, 1984",25.0,6,Clifton J. Ozen HS (TX),2570
+14,1610612738,2009,00,Brian Scalabrine,Brian,brian-scalabrine,44,F,6-9,235,"MAR 18, 1978",32.0,8,Southern California,2243
+0,1610612738,2010,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",20.0,R,Texas-Austin,202340
+1,1610612738,2010,00,Nenad Krstic,Nenad,nenad-krstic,4,C,7-0,240,"JUL 25, 1983",27.0,6,Partizan,2420
+2,1610612738,2010,00,Kevin Garnett,Kevin,kevin-garnett,5,F,6-11,253,"MAY 19, 1976",35.0,15,Farragut Academy HS (IL),708
+3,1610612738,2010,00,Jermaine O'Neal,Jermaine,jermaine-oneal,7,C-F,6-11,255,"OCT 13, 1978",32.0,14,Eau Claire HS (SC),979
+4,1610612738,2010,00,Jeff Green,Jeff,jeff-green,8,F,6-9,235,"AUG 28, 1986",24.0,3,Georgetown,201145
+5,1610612738,2010,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,171,"FEB 22, 1986",25.0,4,Kentucky,200765
+6,1610612738,2010,00,Glen Davis,Glen,glen-davis,11,F-C,6-9,289,"JAN 01, 1986",25.0,3,Louisiana State,201175
+7,1610612738,2010,00,Von Wafer,Von,von-wafer,12,G,6-5,209,"JUL 21, 1985",25.0,5,Florida State,101144
+8,1610612738,2010,00,Delonte West,Delonte,delonte-west,13,G,6-3,180,"JUL 26, 1983",27.0,6,St. Joseph's (PA),2753
+9,1610612738,2010,00,Ray Allen,Ray,ray-allen,20,G,6-5,205,"JUL 20, 1975",35.0,14,Connecticut,951
+10,1610612738,2010,00,Troy Murphy,Troy,troy-murphy,30,F-C,6-11,245,"MAY 02, 1980",31.0,9,Notre Dame,2211
+11,1610612738,2010,00,Paul Pierce,Paul,paul-pierce,34,F,6-7,235,"OCT 13, 1977",33.0,12,Kansas,1718
+12,1610612738,2010,00,Shaquille O'Neal,Shaquille,shaquille-oneal,36,C,7-1,325,"MAR 06, 1972",39.0,18,Louisiana State,406
+13,1610612738,2010,00,Carlos Arroyo,Carlos,carlos-arroyo,45,G,6-2,200,"JUL 30, 1979",31.0,8,Florida International,2306
+14,1610612738,2010,00,Sasha Pavlovic,Sasha,sasha-pavlovic,77,G-F,6-7,235,"NOV 15, 1983",27.0,7,Buducnost,2562
+0,1610612738,2011,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",21.0,1,Texas-Austin,202340
+1,1610612738,2011,00,Marquis Daniels,Marquis,marquis-daniels,4,F-G,6-6,200,"JAN 07, 1981",31.0,8,Auburn,2605
+2,1610612738,2011,00,Kevin Garnett,Kevin,kevin-garnett,5,C-F,6-11,253,"MAY 19, 1976",36.0,16,Farragut Academy HS (IL),708
+3,1610612738,2011,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,186,"FEB 22, 1986",26.0,5,Kentucky,200765
+4,1610612738,2011,00,Sasha Pavlovic,Sasha,sasha-pavlovic,11,F-G,6-7,235,"NOV 15, 1983",28.0,8,Buducnost,2562
+5,1610612738,2011,00,JaJuan Johnson,JaJuan,jajuan-johnson,12,F,6-10,221,"FEB 08, 1989",23.0,R,Purdue,202707
+6,1610612738,2011,00,Ray Allen,Ray,ray-allen,20,G,6-5,205,"JUL 20, 1975",36.0,15,Connecticut,951
+7,1610612738,2011,00,Mickael Pietrus,Mickael,mickael-pietrus,28,G-F,6-6,215,"FEB 07, 1982",30.0,8,Pau Orthez,2554
+8,1610612738,2011,00,Brandon Bass,Brandon,brandon-bass,30,F,6-8,250,"APR 30, 1985",27.0,6,Louisiana State,101138
+9,1610612738,2011,00,Paul Pierce,Paul,paul-pierce,34,F,6-7,235,"OCT 13, 1977",34.0,13,Kansas,1718
+10,1610612738,2011,00,Ryan Hollins,Ryan,ryan-hollins,50,C,7-0,240,"OCT 10, 1984",27.0,5,UCLA,200797
+11,1610612738,2011,00,Keyon Dooling,Keyon,keyon-dooling,51,G,6-3,195,"MAY 08, 1980",32.0,11,Missouri,2039
+12,1610612738,2011,00,Greg Stiemsma,Greg,greg-stiemsma,54,C,6-11,260,"SEP 26, 1985",26.0,R,Wisconsin,201880
+13,1610612738,2011,00,E'Twaun Moore,E'Twaun,etwaun-moore,55,G,6-4,191,"FEB 25, 1989",23.0,R,Purdue,202734
+14,1610612738,2011,00,Sean Williams,Sean,sean-williams,56,F-C,6-10,235,"SEP 13, 1986",25.0,3,Boston College,201157
+0,1610612738,2012,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",22.0,2,Texas-Austin,202340
+1,1610612738,2012,00,Jason Terry,Jason,jason-terry,4,G,6-2,180,"SEP 15, 1977",35.0,13,Arizona,1891
+2,1610612738,2012,00,Kevin Garnett,Kevin,kevin-garnett,5,C-F,6-11,253,"MAY 19, 1976",37.0,17,Farragut Academy HS (IL),708
+3,1610612738,2012,00,Jared Sullinger,Jared,jared-sullinger,7,F,6-9,260,"MAR 04, 1992",21.0,R,Ohio State,203096
+4,1610612738,2012,00,Jeff Green,Jeff,jeff-green,8,F,6-9,235,"AUG 28, 1986",26.0,4,Georgetown,201145
+5,1610612738,2012,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,186,"FEB 22, 1986",27.0,6,Kentucky,200765
+6,1610612738,2012,00,Courtney Lee,Courtney,courtney-lee,11,G,6-5,200,"OCT 03, 1985",27.0,4,Western Kentucky,201584
+7,1610612738,2012,00,DJ White,DJ,dj-white,12,F,6-9,250,"AUG 31, 1986",26.0,4,Indiana,201591
+8,1610612738,2012,00,Fab Melo,Fab,fab-melo,13,C,7-0,255,"JUN 20, 1990",23.0,R,Syracuse,203097
+9,1610612738,2012,00,Jordan Crawford,Jordan,jordan-crawford,27,G,6-4,195,"OCT 23, 1988",24.0,2,Xavier,202348
+10,1610612738,2012,00,Brandon Bass,Brandon,brandon-bass,30,F,6-8,250,"APR 30, 1985",28.0,7,Louisiana State,101138
+11,1610612738,2012,00,Paul Pierce,Paul,paul-pierce,34,F,6-7,235,"OCT 13, 1977",35.0,14,Kansas,1718
+12,1610612738,2012,00,Shavlik Randolph,Shavlik,shavlik-randolph,42,F,6-10,236,"NOV 24, 1983",29.0,5,Duke,101183
+13,1610612738,2012,00,Chris Wilcox,Chris,chris-wilcox,44,F-C,6-10,235,"SEP 03, 1982",30.0,10,Maryland,2404
+14,1610612738,2012,00,Terrence Williams,Terrence,terrence-williams,55,G-F,6-6,220,"JUN 28, 1987",26.0,3,Louisville,201944
+0,1610612738,2013,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",23.0,3,Texas-Austin,202340
+1,1610612738,2013,00,Keith Bogans,Keith,keith-bogans,4,G-F,6-5,215,"MAY 12, 1980",34.0,10,Kentucky,2586
+2,1610612738,2013,00,Jared Sullinger,Jared,jared-sullinger,7,C-F,6-9,260,"MAR 04, 1992",22.0,1,Ohio State,203096
+3,1610612738,2013,00,Jeff Green,Jeff,jeff-green,8,F,6-9,235,"AUG 28, 1986",27.0,5,Georgetown,201145
+4,1610612738,2013,00,Rajon Rondo,Rajon,rajon-rondo,9,G,6-1,186,"FEB 22, 1986",28.0,7,Kentucky,200765
+5,1610612738,2013,00,Jerryd Bayless,Jerryd,jerryd-bayless,11,G,6-3,200,"AUG 20, 1988",25.0,5,Arizona,201573
+6,1610612738,2013,00,Chris Johnson,Chris,chris-johnson,12,F-G,6-6,201,"APR 29, 1990",24.0,1,Dayton,203187
+7,1610612738,2013,00,Phil Pressey,Phil,phil-pressey,26,G,5-11,175,"FEB 17, 1991",23.0,R,Missouri,203515
+8,1610612738,2013,00,Brandon Bass,Brandon,brandon-bass,30,F,6-8,250,"APR 30, 1985",29.0,8,Louisiana State,101138
+9,1610612738,2013,00,Vitor Faverani,Vitor,vitor-faverani,38,C,6-11,260,"MAY 05, 1988",26.0,R,Valencia,203543
+10,1610612738,2013,00,Kelly Olynyk,Kelly,kelly-olynyk,41,C-F,7-0,238,"APR 19, 1991",23.0,R,Gonzaga,203482
+11,1610612738,2013,00,Kris Humphries,Kris,kris-humphries,43,C-F,6-9,235,"FEB 06, 1985",29.0,9,Minnesota,2743
+12,1610612738,2013,00,Gerald Wallace,Gerald,gerald-wallace,45,F,6-7,220,"JUL 23, 1982",31.0,12,Alabama,2222
+13,1610612738,2013,00,Joel Anthony,Joel,joel-anthony,50,C,6-9,245,"AUG 09, 1982",31.0,6,UNLV,201202
+14,1610612738,2013,00,Chris Babb,Chris,chris-babb,52,G,6-5,225,"FEB 14, 1990",24.0,R,Iowa State,203569
+0,1610612738,2014,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",24.0,4,Texas-Austin,202340
+1,1610612738,2014,00,Isaiah Thomas,Isaiah,isaiah-thomas,4,G,5-9,185,"FEB 07, 1989",26.0,3,Washington,202738
+2,1610612738,2014,00,Jared Sullinger,Jared,jared-sullinger,7,F,6-9,260,"MAR 04, 1992",23.0,2,Ohio State,203096
+3,1610612738,2014,00,Jonas Jerebko,Jonas,jonas-jerebko,8,F,6-10,231,"MAR 02, 1987",28.0,4,                                   ,201973
+4,1610612738,2014,00,Evan Turner,Evan,evan-turner,11,G-F,6-7,220,"OCT 27, 1988",26.0,4,Ohio State,202323
+5,1610612738,2014,00,James Young,James,james-young,13,G-F,6-6,215,"AUG 16, 1995",19.0,R,Kentucky,203923
+6,1610612738,2014,00,Phil Pressey,Phil,phil-pressey,26,G,5-11,175,"FEB 17, 1991",24.0,1,Missouri,203515
+7,1610612738,2014,00,Brandon Bass,Brandon,brandon-bass,30,F-C,6-8,250,"APR 30, 1985",30.0,9,Louisiana State,101138
+8,1610612738,2014,00,Marcus Smart,Marcus,marcus-smart,36,G,6-4,220,"MAR 06, 1994",21.0,R,Oklahoma State,203935
+9,1610612738,2014,00,Kelly Olynyk,Kelly,kelly-olynyk,41,C-F,7-0,238,"APR 19, 1991",24.0,1,Gonzaga,203482
+10,1610612738,2014,00,Tyler Zeller,Tyler,tyler-zeller,44,C-F,7-0,253,"JAN 17, 1990",25.0,2,North Carolina,203092
+11,1610612738,2014,00,Gerald Wallace,Gerald,gerald-wallace,45,F,6-7,220,"JUL 23, 1982",32.0,13,Alabama,2222
+12,1610612738,2014,00,Chris Babb,Chris,chris-babb,52,G,6-5,225,"FEB 14, 1990",25.0,1,Iowa State,203569
+13,1610612738,2014,00,Gigi Datome,Gigi,gigi-datome,70,F,6-8,215,"NOV 27, 1987",27.0,1,Virtus Roma,203540
+14,1610612738,2014,00,Jae Crowder,Jae,jae-crowder,99,F,6-6,235,"JUL 06, 1990",24.0,2,Marquette,203109
+0,1610612738,2015,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",25.0,5,Texas-Austin,202340
+1,1610612738,2015,00,Isaiah Thomas,Isaiah,isaiah-thomas,4,G,5-9,185,"FEB 07, 1989",27.0,4,Washington,202738
+2,1610612738,2015,00,Jared Sullinger,Jared,jared-sullinger,7,C-F,6-9,260,"MAR 04, 1992",24.0,3,Ohio State,203096
+3,1610612738,2015,00,Jonas Jerebko,Jonas,jonas-jerebko,8,F,6-10,231,"MAR 02, 1987",29.0,5,                                   ,201973
+4,1610612738,2015,00,Evan Turner,Evan,evan-turner,11,G-F,6-7,220,"OCT 27, 1988",27.0,5,Ohio State,202323
+5,1610612738,2015,00,Terry Rozier,Terry,terry-rozier,12,G,6-2,190,"MAR 17, 1994",22.0,R,Louisville,1626179
+6,1610612738,2015,00,James Young,James,james-young,13,G-F,6-6,215,"AUG 16, 1995",20.0,1,Kentucky,203923
+7,1610612738,2015,00,RJ Hunter,RJ,rj-hunter,28,G,6-5,185,"OCT 24, 1993",22.0,R,Georgia State,1626154
+8,1610612738,2015,00,John Holland,John,john-holland,30,G-F,6-5,205,"NOV 06, 1988",27.0,R,Boston U.,204066
+9,1610612738,2015,00,Marcus Smart,Marcus,marcus-smart,36,G,6-4,220,"MAR 06, 1994",22.0,1,Oklahoma State,203935
+10,1610612738,2015,00,Kelly Olynyk,Kelly,kelly-olynyk,41,C-F,7-0,238,"APR 19, 1991",25.0,2,Gonzaga,203482
+11,1610612738,2015,00,Tyler Zeller,Tyler,tyler-zeller,44,C-F,7-0,253,"JAN 17, 1990",26.0,3,North Carolina,203092
+12,1610612738,2015,00,Jordan Mickey,Jordan,jordan-mickey,55,F,6-8,235,"JUL 09, 1994",21.0,R,Louisiana State,1626175
+13,1610612738,2015,00,Amir Johnson,Amir,amir-johnson,90,F,6-9,240,"MAY 01, 1987",29.0,10,No College,101161
+14,1610612738,2015,00,Jae Crowder,Jae,jae-crowder,99,F,6-6,235,"JUL 06, 1990",25.0,3,Marquette,203109
+0,1610612738,2016,00,Avery Bradley,Avery,avery-bradley,0,G,6-2,180,"NOV 26, 1990",26.0,6,Texas-Austin,202340
+1,1610612738,2016,00,Isaiah Thomas,Isaiah,isaiah-thomas,4,G,5-9,185,"FEB 07, 1989",28.0,5,Washington,202738
+2,1610612738,2016,00,Jaylen Brown,Jaylen,jaylen-brown,7,F,6-7,225,"OCT 24, 1996",20.0,R,California,1627759
+3,1610612738,2016,00,Jonas Jerebko,Jonas,jonas-jerebko,8,F,6-10,231,"MAR 02, 1987",30.0,6,                                   ,201973
+4,1610612738,2016,00,Demetrius Jackson,Demetrius,demetrius-jackson,9,G,6-1,201,"SEP 07, 1994",22.0,R,Notre Dame,1627743
+5,1610612738,2016,00,Terry Rozier,Terry,terry-rozier,12,G,6-2,190,"MAR 17, 1994",23.0,1,Louisville,1626179
+6,1610612738,2016,00,James Young,James,james-young,13,G-F,6-6,215,"AUG 16, 1995",21.0,2,Kentucky,203923
+7,1610612738,2016,00,Gerald Green,Gerald,gerald-green,30,F,6-7,205,"JAN 26, 1986",31.0,9,No College,101123
+8,1610612738,2016,00,Marcus Smart,Marcus,marcus-smart,36,G,6-4,220,"MAR 06, 1994",23.0,2,Oklahoma State,203935
+9,1610612738,2016,00,Kelly Olynyk,Kelly,kelly-olynyk,41,C-F,7-0,238,"APR 19, 1991",26.0,3,Gonzaga,203482
+10,1610612738,2016,00,Al Horford,Al,al-horford,42,C,6-10,245,"JUN 03, 1986",31.0,9,Florida,201143
+11,1610612738,2016,00,Tyler Zeller,Tyler,tyler-zeller,44,C,7-0,253,"JAN 17, 1990",27.0,4,North Carolina,203092
+12,1610612738,2016,00,Jordan Mickey,Jordan,jordan-mickey,55,F,6-8,235,"JUL 09, 1994",22.0,1,Louisiana State,1626175
+13,1610612738,2016,00,Amir Johnson,Amir,amir-johnson,90,F,6-9,240,"MAY 01, 1987",30.0,11,No College,101161
+14,1610612738,2016,00,Jae Crowder,Jae,jae-crowder,99,F,6-6,235,"JUL 06, 1990",26.0,4,Marquette,203109
+0,1610612738,2017,00,Jayson Tatum,Jayson,jayson-tatum,0,F,6-8,205,"MAR 03, 1998",20.0,R,Duke,1628369
+1,1610612738,2017,00,Jaylen Brown,Jaylen,jaylen-brown,7,G-F,6-7,225,"OCT 24, 1996",21.0,1,California,1627759
+2,1610612738,2017,00,Shane Larkin,Shane,shane-larkin,8,G,5-11,175,"OCT 02, 1992",25.0,3,Miami,203499
+3,1610612738,2017,00,Xavier Silas,Xavier,xavier-silas,9,G,6-5,205,"JAN 22, 1988",30.0,1,Northern Illinois,202918
+4,1610612738,2017,00,Kyrie Irving,Kyrie,kyrie-irving,11,G,6-3,193,"MAR 23, 1992",26.0,6,Duke,202681
+5,1610612738,2017,00,Terry Rozier,Terry,terry-rozier,12,G,6-2,190,"MAR 17, 1994",24.0,2,Louisville,1626179
+6,1610612738,2017,00,Marcus Morris Sr.,Marcus,marcus-morris-sr,13,F,6-9,235,"SEP 02, 1989",28.0,6,Kansas,202694
+7,1610612738,2017,00,Gordon Hayward,Gordon,gordon-hayward,20,F,6-8,226,"MAR 23, 1990",28.0,7,Butler,202330
+8,1610612738,2017,00,Jabari Bird,Jabari,jabari-bird,26,G,6-6,198,"JUL 03, 1994",23.0,R,"University of California, Berkeley",1628444
+9,1610612738,2017,00,Daniel Theis,Daniel,daniel-theis,27,F-C,6-9,243,"APR 04, 1992",26.0,R,Brose Bamberg,1628464
+10,1610612738,2017,00,Abdel Nader,Abdel,abdel-nader,28,F,6-6,230,"SEP 25, 1993",24.0,R,Iowa State,1627846
+11,1610612738,2017,00,Guerschon Yabusele,Guerschon,guerschon-yabusele,30,F,6-8,260,"DEC 17, 1995",22.0,R,                                   ,1627824
+12,1610612738,2017,00,Marcus Smart,Marcus,marcus-smart,36,G,6-4,220,"MAR 06, 1994",24.0,3,Oklahoma State,203935
+13,1610612738,2017,00,Semi Ojeleye,Semi,semi-ojeleye,37,F,6-7,235,"DEC 05, 1994",23.0,R,Southern Methodist,1628400
+14,1610612738,2017,00,Al Horford,Al,al-horford,42,F-C,6-10,245,"JUN 03, 1986",32.0,10,Florida,201143
+15,1610612738,2017,00,Kadeem Allen,Kadeem,kadeem-allen,45,G,6-3,200,"JAN 15, 1993",25.0,R,Arizona,1628443
+16,1610612738,2017,00,Aron Baynes,Aron,aron-baynes,46,C,6-10,260,"DEC 09, 1986",31.0,5,Washington State,203382
+17,1610612738,2017,00,Greg Monroe,Greg,greg-monroe,55,C-F,6-11,265,"JUN 04, 1990",28.0,7,Georgetown,202328
+18,1610612738,2017,00,Jonathan Gibson,Jonathan,jonathan-gibson,60,G,6-2,185,"NOV 08, 1987",30.0,1,New Mexico State,1626780
+0,1610612738,2018,00,Jayson Tatum,Jayson,jayson-tatum,0,F,6-8,208,"MAR 03, 1998",21.0,1,Duke,1628369
+1,1610612738,2018,00,Jonathan Gibson,Jonathan,jonathan-gibson,3,G,6-2,185,"NOV 08, 1987",31.0,2,New Mexico State,1626780
+2,1610612738,2018,00,Jaylen Brown,Jaylen,jaylen-brown,7,G,6-7,220,"OCT 24, 1996",22.0,2,California,1627759
+3,1610612738,2018,00,Brad Wanamaker,Brad,brad-wanamaker,9,G,6-4,210,"JUL 25, 1989",29.0,R,Pittsburgh,202954
+4,1610612738,2018,00,Kyrie Irving,Kyrie,kyrie-irving,11,G,6-3,193,"MAR 23, 1992",27.0,7,Duke,202681
+5,1610612738,2018,00,Terry Rozier,Terry,terry-rozier,12,G,6-1,190,"MAR 17, 1994",25.0,3,Louisville,1626179
+6,1610612738,2018,00,Marcus Morris Sr.,Marcus,marcus-morris-sr,13,F,6-9,235,"SEP 02, 1989",29.0,7,Kansas,202694
+7,1610612738,2018,00,Gordon Hayward,Gordon,gordon-hayward,20,F,6-8,225,"MAR 23, 1990",29.0,8,Butler,202330
+8,1610612738,2018,00,Daniel Theis,Daniel,daniel-theis,27,F,6-8,243,"APR 04, 1992",27.0,1,Brose Bamberg,1628464
+9,1610612738,2018,00,RJ Hunter,RJ,rj-hunter,28,G,6-5,185,"OCT 24, 1993",25.0,3,Georgia State,1626154
+10,1610612738,2018,00,Guerschon Yabusele,Guerschon,guerschon-yabusele,30,F,6-8,260,"DEC 17, 1995",23.0,1,                                   ,1627824
+11,1610612738,2018,00,Marcus Smart,Marcus,marcus-smart,36,G,6-4,220,"MAR 06, 1994",25.0,4,Oklahoma State,203935
+12,1610612738,2018,00,Semi Ojeleye,Semi,semi-ojeleye,37,F,6-7,241,"DEC 05, 1994",24.0,1,Southern Methodist,1628400
+13,1610612738,2018,00,Al Horford,Al,al-horford,42,C-F,6-10,245,"JUN 03, 1986",33.0,11,Florida,201143
+14,1610612738,2018,00,Robert Williams III,Robert,robert-williams-iii,44,C-F,6-10,240,"OCT 17, 1997",21.0,R,Texas A&M,1629057
+15,1610612738,2018,00,Aron Baynes,Aron,aron-baynes,46,C-F,6-10,260,"DEC 09, 1986",32.0,6,Washington State,203382
+16,1610612738,2018,00,P.J. Dozier,P.J.,pj-dozier,50,G-F,6-6,205,"OCT 25, 1996",22.0,1,South Carolina,1628408
+0,1610612738,2019,00,Jayson Tatum,Jayson,jayson-tatum,0,F-G,6-8,210,"MAR 03, 1998",22.0,2,Duke,1628369
+1,1610612738,2019,00,Carsen Edwards,Carsen,carsen-edwards,4,G,5-11,200,"MAR 12, 1998",22.0,R,Purdue,1629035
+2,1610612738,2019,00,Jaylen Brown,Jaylen,jaylen-brown,7,G-F,6-6,223,"OCT 24, 1996",23.0,3,California,1627759
+3,1610612738,2019,00,Kemba Walker,Kemba,kemba-walker,8,G,6-0,184,"MAY 08, 1990",30.0,8,Connecticut,202689
+4,1610612738,2019,00,Brad Wanamaker,Brad,brad-wanamaker,9,G,6-3,210,"JUL 25, 1989",30.0,1,Pittsburgh,202954
+5,1610612738,2019,00,Enes Freedom,Enes,enes-freedom,11,C,6-10,250,"MAY 20, 1992",28.0,8,                                   ,202683
+6,1610612738,2019,00,Grant Williams,Grant,grant-williams,12,F,6-6,236,"NOV 30, 1998",21.0,R,Tennessee,1629684
+7,1610612738,2019,00,Gordon Hayward,Gordon,gordon-hayward,20,F,6-7,225,"MAR 23, 1990",30.0,9,Butler,202330
+8,1610612738,2019,00,Daniel Theis,Daniel,daniel-theis,27,F-C,6-8,245,"APR 04, 1992",28.0,2,Brose Bamberg,1628464
+9,1610612738,2019,00,Marcus Smart,Marcus,marcus-smart,36,G,6-3,220,"MAR 06, 1994",26.0,5,Oklahoma State,203935
+10,1610612738,2019,00,Semi Ojeleye,Semi,semi-ojeleye,37,F,6-6,240,"DEC 05, 1994",25.0,2,Southern Methodist,1628400
+11,1610612738,2019,00,Javonte Green,Javonte,javonte-green,43,G-F,6-4,205,"JUL 23, 1993",26.0,R,Radford,1629750
+12,1610612738,2019,00,Robert Williams III,Robert,robert-williams-iii,44,C-F,6-8,237,"OCT 17, 1997",22.0,1,Texas A&M,1629057
+13,1610612738,2019,00,Romeo Langford,Romeo,romeo-langford,45,G-F,6-4,216,"OCT 25, 1999",20.0,R,Indiana,1629641
+14,1610612738,2019,00,Tremont Waters,Tremont,tremont-waters,51,G,5-10,175,"JAN 10, 1998",22.0,R,Louisiana State,1629682
+15,1610612738,2019,00,Vincent Poirier,Vincent,vincent-poirier,77,C-F,7-0,235,"OCT 17, 1993",26.0,R,                                   ,1629738
+16,1610612738,2019,00,Tacko Fall,Tacko,tacko-fall,99,C,7-5,311,"DEC 10, 1995",24.0,R,Central Florida,1629605
+0,1610612738,2020,00,Jayson Tatum,Jayson,jayson-tatum,0,F-G,6-8,210,"MAR 03, 1998",23.0,3,Duke,1628369
+1,1610612738,2020,00,Carsen Edwards,Carsen,carsen-edwards,4,G,5-11,200,"MAR 12, 1998",23.0,1,Purdue,1629035
+2,1610612738,2020,00,Jaylen Brown,Jaylen,jaylen-brown,7,G-F,6-6,223,"OCT 24, 1996",24.0,4,California,1627759
+3,1610612738,2020,00,Moses Brown,Moses,moses-brown,9,C,7-2,245,"OCT 13, 1999",21.0,1,UCLA,1629650
+4,1610612738,2020,00,Payton Pritchard,Payton,payton-pritchard,11,G,6-1,195,"JAN 28, 1998",23.0,R,Oregon,1630202
+5,1610612738,2020,00,Grant Williams,Grant,grant-williams,12,F,6-6,236,"NOV 30, 1998",22.0,1,Tennessee,1629684
+6,1610612738,2020,00,Tristan Thompson,Tristan,tristan-thompson,13,C-F,6-9,254,"MAR 13, 1991",30.0,9,Texas-Austin,202684
+7,1610612738,2020,00,Jabari Parker,Jabari,jabari-parker,20,F,6-8,245,"MAR 15, 1995",26.0,6,Duke,203953
+8,1610612738,2020,00,Aaron Nesmith,Aaron,aaron-nesmith,26,G-F,6-5,215,"OCT 16, 1999",21.0,R,Vanderbilt,1630174
+9,1610612738,2020,00,Marcus Smart,Marcus,marcus-smart,36,G,6-3,220,"MAR 06, 1994",27.0,6,Oklahoma State,203935
+10,1610612738,2020,00,Semi Ojeleye,Semi,semi-ojeleye,37,F,6-6,240,"DEC 05, 1994",26.0,3,Southern Methodist,1628400
+11,1610612738,2020,00,Luke Kornet,Luke,luke-kornet,40,F-C,7-2,250,"JUL 15, 1995",25.0,3,Vanderbilt,1628436
+12,1610612738,2020,00,Al Horford,Al,al-horford,42,C-F,6-9,240,"JUN 03, 1986",35.0,13,Florida,201143
+13,1610612738,2020,00,Robert Williams III,Robert,robert-williams-iii,44,C-F,6-8,237,"OCT 17, 1997",23.0,2,Texas A&M,1629057
+14,1610612738,2020,00,Romeo Langford,Romeo,romeo-langford,45,G-F,6-4,216,"OCT 25, 1999",21.0,1,Indiana,1629641
+15,1610612738,2020,00,Tremont Waters,Tremont,tremont-waters,51,G,5-10,175,"JAN 10, 1998",23.0,1,Louisiana State,1629682
+16,1610612738,2020,00,Evan Fournier,Evan,evan-fournier,94,G-F,6-7,205,"OCT 29, 1992",28.0,8,Poitiers Basket 86,203095
+17,1610612738,2020,00,Tacko Fall,Tacko,tacko-fall,99,C,7-5,311,"DEC 10, 1995",25.0,1,Central Florida,1629605
