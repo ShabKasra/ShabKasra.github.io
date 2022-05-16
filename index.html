@@ -14302,26 +14302,31 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[690]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[925]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">allLinks</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#list for all links</span>
+<span class="n">allLinks</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2023</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.basketball-reference.com/leagues/NBA_</span><span class="si">{}</span><span class="s2">.html&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
-
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.basketball-reference.com/leagues/NBA_</span><span class="si">{}</span><span class="s2">.html&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="c1"># puts year into url</span>
+    
+    <span class="c1">#sending request</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span> 
     <span class="n">soupStruct</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
+    
+    <span class="c1">#finding first two tables which has links on all the teams</span>
     <span class="n">allTables</span> <span class="o">=</span> <span class="n">soupStruct</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
     
+    <span class="c1">#getting the href tag that will lead to each team&#39;s page</span>
     <span class="k">for</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">allTables</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">):</span>
                 <span class="n">aTag</span> <span class="o">=</span> <span class="n">th</span><span class="o">.</span><span class="n">a</span>
                 <span class="k">if</span> <span class="n">aTag</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">allLinks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">aTag</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">allLinks</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is an example of 1 of our &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">allLinks</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; links: &quot;</span> <span class="o">+</span> <span class="n">allLinks</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -14341,7 +14346,7 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;/teams/MIA/2000.html&#39;, &#39;/teams/NYK/2000.html&#39;, &#39;/teams/PHI/2000.html&#39;, &#39;/teams/ORL/2000.html&#39;, &#39;/teams/BOS/2000.html&#39;, &#39;/teams/NJN/2000.html&#39;, &#39;/teams/WAS/2000.html&#39;, &#39;/teams/IND/2000.html&#39;, &#39;/teams/CHH/2000.html&#39;, &#39;/teams/TOR/2000.html&#39;, &#39;/teams/DET/2000.html&#39;, &#39;/teams/MIL/2000.html&#39;, &#39;/teams/CLE/2000.html&#39;, &#39;/teams/ATL/2000.html&#39;, &#39;/teams/CHI/2000.html&#39;, &#39;/teams/UTA/2000.html&#39;, &#39;/teams/SAS/2000.html&#39;, &#39;/teams/MIN/2000.html&#39;, &#39;/teams/DAL/2000.html&#39;, &#39;/teams/DEN/2000.html&#39;, &#39;/teams/HOU/2000.html&#39;, &#39;/teams/VAN/2000.html&#39;, &#39;/teams/LAL/2000.html&#39;, &#39;/teams/POR/2000.html&#39;, &#39;/teams/PHO/2000.html&#39;, &#39;/teams/SEA/2000.html&#39;, &#39;/teams/SAC/2000.html&#39;, &#39;/teams/GSW/2000.html&#39;, &#39;/teams/LAC/2000.html&#39;, &#39;/teams/PHI/2001.html&#39;, &#39;/teams/MIA/2001.html&#39;, &#39;/teams/NYK/2001.html&#39;, &#39;/teams/ORL/2001.html&#39;, &#39;/teams/BOS/2001.html&#39;, &#39;/teams/NJN/2001.html&#39;, &#39;/teams/WAS/2001.html&#39;, &#39;/teams/MIL/2001.html&#39;, &#39;/teams/TOR/2001.html&#39;, &#39;/teams/CHH/2001.html&#39;, &#39;/teams/IND/2001.html&#39;, &#39;/teams/DET/2001.html&#39;, &#39;/teams/CLE/2001.html&#39;, &#39;/teams/ATL/2001.html&#39;, &#39;/teams/CHI/2001.html&#39;, &#39;/teams/SAS/2001.html&#39;, &#39;/teams/UTA/2001.html&#39;, &#39;/teams/DAL/2001.html&#39;, &#39;/teams/MIN/2001.html&#39;, &#39;/teams/HOU/2001.html&#39;, &#39;/teams/DEN/2001.html&#39;, &#39;/teams/VAN/2001.html&#39;, &#39;/teams/LAL/2001.html&#39;, &#39;/teams/SAC/2001.html&#39;, &#39;/teams/PHO/2001.html&#39;, &#39;/teams/POR/2001.html&#39;, &#39;/teams/SEA/2001.html&#39;, &#39;/teams/LAC/2001.html&#39;, &#39;/teams/GSW/2001.html&#39;, &#39;/teams/NJN/2002.html&#39;, &#39;/teams/BOS/2002.html&#39;, &#39;/teams/ORL/2002.html&#39;, &#39;/teams/PHI/2002.html&#39;, &#39;/teams/WAS/2002.html&#39;, &#39;/teams/MIA/2002.html&#39;, &#39;/teams/NYK/2002.html&#39;, &#39;/teams/DET/2002.html&#39;, &#39;/teams/CHH/2002.html&#39;, &#39;/teams/TOR/2002.html&#39;, &#39;/teams/IND/2002.html&#39;, &#39;/teams/MIL/2002.html&#39;, &#39;/teams/ATL/2002.html&#39;, &#39;/teams/CLE/2002.html&#39;, &#39;/teams/CHI/2002.html&#39;, &#39;/teams/SAS/2002.html&#39;, &#39;/teams/DAL/2002.html&#39;, &#39;/teams/MIN/2002.html&#39;, &#39;/teams/UTA/2002.html&#39;, &#39;/teams/HOU/2002.html&#39;, &#39;/teams/DEN/2002.html&#39;, &#39;/teams/MEM/2002.html&#39;, &#39;/teams/SAC/2002.html&#39;, &#39;/teams/LAL/2002.html&#39;, &#39;/teams/POR/2002.html&#39;, &#39;/teams/SEA/2002.html&#39;, &#39;/teams/LAC/2002.html&#39;, &#39;/teams/PHO/2002.html&#39;, &#39;/teams/GSW/2002.html&#39;, &#39;/teams/NJN/2003.html&#39;, &#39;/teams/PHI/2003.html&#39;, &#39;/teams/BOS/2003.html&#39;, &#39;/teams/ORL/2003.html&#39;, &#39;/teams/WAS/2003.html&#39;, &#39;/teams/NYK/2003.html&#39;, &#39;/teams/MIA/2003.html&#39;, &#39;/teams/DET/2003.html&#39;, &#39;/teams/IND/2003.html&#39;, &#39;/teams/NOH/2003.html&#39;, &#39;/teams/MIL/2003.html&#39;, &#39;/teams/ATL/2003.html&#39;, &#39;/teams/CHI/2003.html&#39;, &#39;/teams/TOR/2003.html&#39;, &#39;/teams/CLE/2003.html&#39;, &#39;/teams/SAS/2003.html&#39;, &#39;/teams/DAL/2003.html&#39;, &#39;/teams/MIN/2003.html&#39;, &#39;/teams/UTA/2003.html&#39;, &#39;/teams/HOU/2003.html&#39;, &#39;/teams/MEM/2003.html&#39;, &#39;/teams/DEN/2003.html&#39;, &#39;/teams/SAC/2003.html&#39;, &#39;/teams/LAL/2003.html&#39;, &#39;/teams/POR/2003.html&#39;, &#39;/teams/PHO/2003.html&#39;, &#39;/teams/SEA/2003.html&#39;, &#39;/teams/GSW/2003.html&#39;, &#39;/teams/LAC/2003.html&#39;, &#39;/teams/NJN/2004.html&#39;, &#39;/teams/MIA/2004.html&#39;, &#39;/teams/NYK/2004.html&#39;, &#39;/teams/BOS/2004.html&#39;, &#39;/teams/PHI/2004.html&#39;, &#39;/teams/WAS/2004.html&#39;, &#39;/teams/ORL/2004.html&#39;, &#39;/teams/IND/2004.html&#39;, &#39;/teams/DET/2004.html&#39;, &#39;/teams/NOH/2004.html&#39;, &#39;/teams/MIL/2004.html&#39;, &#39;/teams/CLE/2004.html&#39;, &#39;/teams/TOR/2004.html&#39;, &#39;/teams/ATL/2004.html&#39;, &#39;/teams/CHI/2004.html&#39;, &#39;/teams/MIN/2004.html&#39;, &#39;/teams/SAS/2004.html&#39;, &#39;/teams/DAL/2004.html&#39;, &#39;/teams/MEM/2004.html&#39;, &#39;/teams/HOU/2004.html&#39;, &#39;/teams/DEN/2004.html&#39;, &#39;/teams/UTA/2004.html&#39;, &#39;/teams/LAL/2004.html&#39;, &#39;/teams/SAC/2004.html&#39;, &#39;/teams/POR/2004.html&#39;, &#39;/teams/GSW/2004.html&#39;, &#39;/teams/SEA/2004.html&#39;, &#39;/teams/PHO/2004.html&#39;, &#39;/teams/LAC/2004.html&#39;, &#39;/teams/BOS/2005.html&#39;, &#39;/teams/PHI/2005.html&#39;, &#39;/teams/NJN/2005.html&#39;, &#39;/teams/TOR/2005.html&#39;, &#39;/teams/NYK/2005.html&#39;, &#39;/teams/DET/2005.html&#39;, &#39;/teams/CHI/2005.html&#39;, &#39;/teams/IND/2005.html&#39;, &#39;/teams/CLE/2005.html&#39;, &#39;/teams/MIL/2005.html&#39;, &#39;/teams/MIA/2005.html&#39;, &#39;/teams/WAS/2005.html&#39;, &#39;/teams/ORL/2005.html&#39;, &#39;/teams/CHA/2005.html&#39;, &#39;/teams/ATL/2005.html&#39;, &#39;/teams/SEA/2005.html&#39;, &#39;/teams/DEN/2005.html&#39;, &#39;/teams/MIN/2005.html&#39;, &#39;/teams/POR/2005.html&#39;, &#39;/teams/UTA/2005.html&#39;, &#39;/teams/PHO/2005.html&#39;, &#39;/teams/SAC/2005.html&#39;, &#39;/teams/LAC/2005.html&#39;, &#39;/teams/LAL/2005.html&#39;, &#39;/teams/GSW/2005.html&#39;, &#39;/teams/SAS/2005.html&#39;, &#39;/teams/DAL/2005.html&#39;, &#39;/teams/HOU/2005.html&#39;, &#39;/teams/MEM/2005.html&#39;, &#39;/teams/NOH/2005.html&#39;, &#39;/teams/NJN/2006.html&#39;, &#39;/teams/PHI/2006.html&#39;, &#39;/teams/BOS/2006.html&#39;, &#39;/teams/TOR/2006.html&#39;, &#39;/teams/NYK/2006.html&#39;, &#39;/teams/DET/2006.html&#39;, &#39;/teams/CLE/2006.html&#39;, &#39;/teams/IND/2006.html&#39;, &#39;/teams/CHI/2006.html&#39;, &#39;/teams/MIL/2006.html&#39;, &#39;/teams/MIA/2006.html&#39;, &#39;/teams/WAS/2006.html&#39;, &#39;/teams/ORL/2006.html&#39;, &#39;/teams/CHA/2006.html&#39;, &#39;/teams/ATL/2006.html&#39;, &#39;/teams/DEN/2006.html&#39;, &#39;/teams/UTA/2006.html&#39;, &#39;/teams/SEA/2006.html&#39;, &#39;/teams/MIN/2006.html&#39;, &#39;/teams/POR/2006.html&#39;, &#39;/teams/PHO/2006.html&#39;, &#39;/teams/LAC/2006.html&#39;, &#39;/teams/LAL/2006.html&#39;, &#39;/teams/SAC/2006.html&#39;, &#39;/teams/GSW/2006.html&#39;, &#39;/teams/SAS/2006.html&#39;, &#39;/teams/DAL/2006.html&#39;, &#39;/teams/MEM/2006.html&#39;, &#39;/teams/NOK/2006.html&#39;, &#39;/teams/HOU/2006.html&#39;, &#39;/teams/TOR/2007.html&#39;, &#39;/teams/NJN/2007.html&#39;, &#39;/teams/PHI/2007.html&#39;, &#39;/teams/NYK/2007.html&#39;, &#39;/teams/BOS/2007.html&#39;, &#39;/teams/DET/2007.html&#39;, &#39;/teams/CLE/2007.html&#39;, &#39;/teams/CHI/2007.html&#39;, &#39;/teams/IND/2007.html&#39;, &#39;/teams/MIL/2007.html&#39;, &#39;/teams/MIA/2007.html&#39;, &#39;/teams/WAS/2007.html&#39;, &#39;/teams/ORL/2007.html&#39;, &#39;/teams/CHA/2007.html&#39;, &#39;/teams/ATL/2007.html&#39;, &#39;/teams/UTA/2007.html&#39;, &#39;/teams/DEN/2007.html&#39;, &#39;/teams/POR/2007.html&#39;, &#39;/teams/MIN/2007.html&#39;, &#39;/teams/SEA/2007.html&#39;, &#39;/teams/PHO/2007.html&#39;, &#39;/teams/LAL/2007.html&#39;, &#39;/teams/GSW/2007.html&#39;, &#39;/teams/LAC/2007.html&#39;, &#39;/teams/SAC/2007.html&#39;, &#39;/teams/DAL/2007.html&#39;, &#39;/teams/SAS/2007.html&#39;, &#39;/teams/HOU/2007.html&#39;, &#39;/teams/NOK/2007.html&#39;, &#39;/teams/MEM/2007.html&#39;, &#39;/teams/BOS/2008.html&#39;, &#39;/teams/TOR/2008.html&#39;, &#39;/teams/PHI/2008.html&#39;, &#39;/teams/NJN/2008.html&#39;, &#39;/teams/NYK/2008.html&#39;, &#39;/teams/DET/2008.html&#39;, &#39;/teams/CLE/2008.html&#39;, &#39;/teams/IND/2008.html&#39;, &#39;/teams/CHI/2008.html&#39;, &#39;/teams/MIL/2008.html&#39;, &#39;/teams/ORL/2008.html&#39;, &#39;/teams/WAS/2008.html&#39;, &#39;/teams/ATL/2008.html&#39;, &#39;/teams/CHA/2008.html&#39;, &#39;/teams/MIA/2008.html&#39;, &#39;/teams/UTA/2008.html&#39;, &#39;/teams/DEN/2008.html&#39;, &#39;/teams/POR/2008.html&#39;, &#39;/teams/MIN/2008.html&#39;, &#39;/teams/SEA/2008.html&#39;, &#39;/teams/LAL/2008.html&#39;, &#39;/teams/PHO/2008.html&#39;, &#39;/teams/GSW/2008.html&#39;, &#39;/teams/SAC/2008.html&#39;, &#39;/teams/LAC/2008.html&#39;, &#39;/teams/NOH/2008.html&#39;, &#39;/teams/SAS/2008.html&#39;, &#39;/teams/HOU/2008.html&#39;, &#39;/teams/DAL/2008.html&#39;, &#39;/teams/MEM/2008.html&#39;, &#39;/teams/BOS/2009.html&#39;, &#39;/teams/PHI/2009.html&#39;, &#39;/teams/NJN/2009.html&#39;, &#39;/teams/TOR/2009.html&#39;, &#39;/teams/NYK/2009.html&#39;, &#39;/teams/CLE/2009.html&#39;, &#39;/teams/CHI/2009.html&#39;, &#39;/teams/DET/2009.html&#39;, &#39;/teams/IND/2009.html&#39;, &#39;/teams/MIL/2009.html&#39;, &#39;/teams/ORL/2009.html&#39;, &#39;/teams/ATL/2009.html&#39;, &#39;/teams/MIA/2009.html&#39;, &#39;/teams/CHA/2009.html&#39;, &#39;/teams/WAS/2009.html&#39;, &#39;/teams/DEN/2009.html&#39;, &#39;/teams/POR/2009.html&#39;, &#39;/teams/UTA/2009.html&#39;, &#39;/teams/MIN/2009.html&#39;, &#39;/teams/OKC/2009.html&#39;, &#39;/teams/LAL/2009.html&#39;, &#39;/teams/PHO/2009.html&#39;, &#39;/teams/GSW/2009.html&#39;, &#39;/teams/LAC/2009.html&#39;, &#39;/teams/SAC/2009.html&#39;, &#39;/teams/SAS/2009.html&#39;, &#39;/teams/HOU/2009.html&#39;, &#39;/teams/DAL/2009.html&#39;, &#39;/teams/NOH/2009.html&#39;, &#39;/teams/MEM/2009.html&#39;, &#39;/teams/BOS/2010.html&#39;, &#39;/teams/TOR/2010.html&#39;, &#39;/teams/NYK/2010.html&#39;, &#39;/teams/PHI/2010.html&#39;, &#39;/teams/NJN/2010.html&#39;, &#39;/teams/CLE/2010.html&#39;, &#39;/teams/MIL/2010.html&#39;, &#39;/teams/CHI/2010.html&#39;, &#39;/teams/IND/2010.html&#39;, &#39;/teams/DET/2010.html&#39;, &#39;/teams/ORL/2010.html&#39;, &#39;/teams/ATL/2010.html&#39;, &#39;/teams/MIA/2010.html&#39;, &#39;/teams/CHA/2010.html&#39;, &#39;/teams/WAS/2010.html&#39;, &#39;/teams/DEN/2010.html&#39;, &#39;/teams/UTA/2010.html&#39;, &#39;/teams/POR/2010.html&#39;, &#39;/teams/OKC/2010.html&#39;, &#39;/teams/MIN/2010.html&#39;, &#39;/teams/LAL/2010.html&#39;, &#39;/teams/PHO/2010.html&#39;, &#39;/teams/LAC/2010.html&#39;, &#39;/teams/GSW/2010.html&#39;, &#39;/teams/SAC/2010.html&#39;, &#39;/teams/DAL/2010.html&#39;, &#39;/teams/SAS/2010.html&#39;, &#39;/teams/HOU/2010.html&#39;, &#39;/teams/MEM/2010.html&#39;, &#39;/teams/NOH/2010.html&#39;, &#39;/teams/BOS/2011.html&#39;, &#39;/teams/NYK/2011.html&#39;, &#39;/teams/PHI/2011.html&#39;, &#39;/teams/NJN/2011.html&#39;, &#39;/teams/TOR/2011.html&#39;, &#39;/teams/CHI/2011.html&#39;, &#39;/teams/IND/2011.html&#39;, &#39;/teams/MIL/2011.html&#39;, &#39;/teams/DET/2011.html&#39;, &#39;/teams/CLE/2011.html&#39;, &#39;/teams/MIA/2011.html&#39;, &#39;/teams/ORL/2011.html&#39;, &#39;/teams/ATL/2011.html&#39;, &#39;/teams/CHA/2011.html&#39;, &#39;/teams/WAS/2011.html&#39;, &#39;/teams/OKC/2011.html&#39;, &#39;/teams/DEN/2011.html&#39;, &#39;/teams/POR/2011.html&#39;, &#39;/teams/UTA/2011.html&#39;, &#39;/teams/MIN/2011.html&#39;, &#39;/teams/LAL/2011.html&#39;, &#39;/teams/PHO/2011.html&#39;, &#39;/teams/GSW/2011.html&#39;, &#39;/teams/LAC/2011.html&#39;, &#39;/teams/SAC/2011.html&#39;, &#39;/teams/SAS/2011.html&#39;, &#39;/teams/DAL/2011.html&#39;, &#39;/teams/NOH/2011.html&#39;, &#39;/teams/MEM/2011.html&#39;, &#39;/teams/HOU/2011.html&#39;, &#39;/teams/BOS/2012.html&#39;, &#39;/teams/NYK/2012.html&#39;, &#39;/teams/PHI/2012.html&#39;, &#39;/teams/TOR/2012.html&#39;, &#39;/teams/NJN/2012.html&#39;, &#39;/teams/CHI/2012.html&#39;, &#39;/teams/IND/2012.html&#39;, &#39;/teams/MIL/2012.html&#39;, &#39;/teams/DET/2012.html&#39;, &#39;/teams/CLE/2012.html&#39;, &#39;/teams/MIA/2012.html&#39;, &#39;/teams/ATL/2012.html&#39;, &#39;/teams/ORL/2012.html&#39;, &#39;/teams/WAS/2012.html&#39;, &#39;/teams/CHA/2012.html&#39;, &#39;/teams/OKC/2012.html&#39;, &#39;/teams/DEN/2012.html&#39;, &#39;/teams/UTA/2012.html&#39;, &#39;/teams/POR/2012.html&#39;, &#39;/teams/MIN/2012.html&#39;, &#39;/teams/LAL/2012.html&#39;, &#39;/teams/LAC/2012.html&#39;, &#39;/teams/PHO/2012.html&#39;, &#39;/teams/GSW/2012.html&#39;, &#39;/teams/SAC/2012.html&#39;, &#39;/teams/SAS/2012.html&#39;, &#39;/teams/MEM/2012.html&#39;, &#39;/teams/DAL/2012.html&#39;, &#39;/teams/HOU/2012.html&#39;, &#39;/teams/NOH/2012.html&#39;, &#39;/teams/NYK/2013.html&#39;, &#39;/teams/BRK/2013.html&#39;, &#39;/teams/BOS/2013.html&#39;, &#39;/teams/PHI/2013.html&#39;, &#39;/teams/TOR/2013.html&#39;, &#39;/teams/IND/2013.html&#39;, &#39;/teams/CHI/2013.html&#39;, &#39;/teams/MIL/2013.html&#39;, &#39;/teams/DET/2013.html&#39;, &#39;/teams/CLE/2013.html&#39;, &#39;/teams/MIA/2013.html&#39;, &#39;/teams/ATL/2013.html&#39;, &#39;/teams/WAS/2013.html&#39;, &#39;/teams/CHA/2013.html&#39;, &#39;/teams/ORL/2013.html&#39;, &#39;/teams/OKC/2013.html&#39;, &#39;/teams/DEN/2013.html&#39;, &#39;/teams/UTA/2013.html&#39;, &#39;/teams/POR/2013.html&#39;, &#39;/teams/MIN/2013.html&#39;, &#39;/teams/LAC/2013.html&#39;, &#39;/teams/GSW/2013.html&#39;, &#39;/teams/LAL/2013.html&#39;, &#39;/teams/SAC/2013.html&#39;, &#39;/teams/PHO/2013.html&#39;, &#39;/teams/SAS/2013.html&#39;, &#39;/teams/MEM/2013.html&#39;, &#39;/teams/HOU/2013.html&#39;, &#39;/teams/DAL/2013.html&#39;, &#39;/teams/NOH/2013.html&#39;, &#39;/teams/TOR/2014.html&#39;, &#39;/teams/BRK/2014.html&#39;, &#39;/teams/NYK/2014.html&#39;, &#39;/teams/BOS/2014.html&#39;, &#39;/teams/PHI/2014.html&#39;, &#39;/teams/IND/2014.html&#39;, &#39;/teams/CHI/2014.html&#39;, &#39;/teams/CLE/2014.html&#39;, &#39;/teams/DET/2014.html&#39;, &#39;/teams/MIL/2014.html&#39;, &#39;/teams/MIA/2014.html&#39;, &#39;/teams/WAS/2014.html&#39;, &#39;/teams/CHA/2014.html&#39;, &#39;/teams/ATL/2014.html&#39;, &#39;/teams/ORL/2014.html&#39;, &#39;/teams/OKC/2014.html&#39;, &#39;/teams/POR/2014.html&#39;, &#39;/teams/MIN/2014.html&#39;, &#39;/teams/DEN/2014.html&#39;, &#39;/teams/UTA/2014.html&#39;, &#39;/teams/LAC/2014.html&#39;, &#39;/teams/GSW/2014.html&#39;, &#39;/teams/PHO/2014.html&#39;, &#39;/teams/SAC/2014.html&#39;, &#39;/teams/LAL/2014.html&#39;, &#39;/teams/SAS/2014.html&#39;, &#39;/teams/HOU/2014.html&#39;, &#39;/teams/MEM/2014.html&#39;, &#39;/teams/DAL/2014.html&#39;, &#39;/teams/NOP/2014.html&#39;, &#39;/teams/TOR/2015.html&#39;, &#39;/teams/BOS/2015.html&#39;, &#39;/teams/BRK/2015.html&#39;, &#39;/teams/PHI/2015.html&#39;, &#39;/teams/NYK/2015.html&#39;, &#39;/teams/CLE/2015.html&#39;, &#39;/teams/CHI/2015.html&#39;, &#39;/teams/MIL/2015.html&#39;, &#39;/teams/IND/2015.html&#39;, &#39;/teams/DET/2015.html&#39;, &#39;/teams/ATL/2015.html&#39;, &#39;/teams/WAS/2015.html&#39;, &#39;/teams/MIA/2015.html&#39;, &#39;/teams/CHO/2015.html&#39;, &#39;/teams/ORL/2015.html&#39;, &#39;/teams/POR/2015.html&#39;, &#39;/teams/OKC/2015.html&#39;, &#39;/teams/UTA/2015.html&#39;, &#39;/teams/DEN/2015.html&#39;, &#39;/teams/MIN/2015.html&#39;, &#39;/teams/GSW/2015.html&#39;, &#39;/teams/LAC/2015.html&#39;, &#39;/teams/PHO/2015.html&#39;, &#39;/teams/SAC/2015.html&#39;, &#39;/teams/LAL/2015.html&#39;, &#39;/teams/HOU/2015.html&#39;, &#39;/teams/MEM/2015.html&#39;, &#39;/teams/SAS/2015.html&#39;, &#39;/teams/DAL/2015.html&#39;, &#39;/teams/NOP/2015.html&#39;, &#39;/teams/CLE/2016.html&#39;, &#39;/teams/TOR/2016.html&#39;, &#39;/teams/MIA/2016.html&#39;, &#39;/teams/ATL/2016.html&#39;, &#39;/teams/BOS/2016.html&#39;, &#39;/teams/CHO/2016.html&#39;, &#39;/teams/IND/2016.html&#39;, &#39;/teams/DET/2016.html&#39;, &#39;/teams/CHI/2016.html&#39;, &#39;/teams/WAS/2016.html&#39;, &#39;/teams/ORL/2016.html&#39;, &#39;/teams/MIL/2016.html&#39;, &#39;/teams/NYK/2016.html&#39;, &#39;/teams/BRK/2016.html&#39;, &#39;/teams/PHI/2016.html&#39;, &#39;/teams/GSW/2016.html&#39;, &#39;/teams/SAS/2016.html&#39;, &#39;/teams/OKC/2016.html&#39;, &#39;/teams/LAC/2016.html&#39;, &#39;/teams/POR/2016.html&#39;, &#39;/teams/DAL/2016.html&#39;, &#39;/teams/MEM/2016.html&#39;, &#39;/teams/HOU/2016.html&#39;, &#39;/teams/UTA/2016.html&#39;, &#39;/teams/SAC/2016.html&#39;, &#39;/teams/DEN/2016.html&#39;, &#39;/teams/NOP/2016.html&#39;, &#39;/teams/MIN/2016.html&#39;, &#39;/teams/PHO/2016.html&#39;, &#39;/teams/LAL/2016.html&#39;, &#39;/teams/BOS/2017.html&#39;, &#39;/teams/CLE/2017.html&#39;, &#39;/teams/TOR/2017.html&#39;, &#39;/teams/WAS/2017.html&#39;, &#39;/teams/ATL/2017.html&#39;, &#39;/teams/MIL/2017.html&#39;, &#39;/teams/IND/2017.html&#39;, &#39;/teams/CHI/2017.html&#39;, &#39;/teams/MIA/2017.html&#39;, &#39;/teams/DET/2017.html&#39;, &#39;/teams/CHO/2017.html&#39;, &#39;/teams/NYK/2017.html&#39;, &#39;/teams/ORL/2017.html&#39;, &#39;/teams/PHI/2017.html&#39;, &#39;/teams/BRK/2017.html&#39;, &#39;/teams/GSW/2017.html&#39;, &#39;/teams/SAS/2017.html&#39;, &#39;/teams/HOU/2017.html&#39;, &#39;/teams/LAC/2017.html&#39;, &#39;/teams/UTA/2017.html&#39;, &#39;/teams/OKC/2017.html&#39;, &#39;/teams/MEM/2017.html&#39;, &#39;/teams/POR/2017.html&#39;, &#39;/teams/DEN/2017.html&#39;, &#39;/teams/NOP/2017.html&#39;, &#39;/teams/DAL/2017.html&#39;, &#39;/teams/SAC/2017.html&#39;, &#39;/teams/MIN/2017.html&#39;, &#39;/teams/LAL/2017.html&#39;, &#39;/teams/PHO/2017.html&#39;, &#39;/teams/TOR/2018.html&#39;, &#39;/teams/BOS/2018.html&#39;, &#39;/teams/PHI/2018.html&#39;, &#39;/teams/CLE/2018.html&#39;, &#39;/teams/IND/2018.html&#39;, &#39;/teams/MIA/2018.html&#39;, &#39;/teams/MIL/2018.html&#39;, &#39;/teams/WAS/2018.html&#39;, &#39;/teams/DET/2018.html&#39;, &#39;/teams/CHO/2018.html&#39;, &#39;/teams/NYK/2018.html&#39;, &#39;/teams/BRK/2018.html&#39;, &#39;/teams/CHI/2018.html&#39;, &#39;/teams/ORL/2018.html&#39;, &#39;/teams/ATL/2018.html&#39;, &#39;/teams/HOU/2018.html&#39;, &#39;/teams/GSW/2018.html&#39;, &#39;/teams/POR/2018.html&#39;, &#39;/teams/OKC/2018.html&#39;, &#39;/teams/UTA/2018.html&#39;, &#39;/teams/NOP/2018.html&#39;, &#39;/teams/SAS/2018.html&#39;, &#39;/teams/MIN/2018.html&#39;, &#39;/teams/DEN/2018.html&#39;, &#39;/teams/LAC/2018.html&#39;, &#39;/teams/LAL/2018.html&#39;, &#39;/teams/SAC/2018.html&#39;, &#39;/teams/DAL/2018.html&#39;, &#39;/teams/MEM/2018.html&#39;, &#39;/teams/PHO/2018.html&#39;, &#39;/teams/MIL/2019.html&#39;, &#39;/teams/TOR/2019.html&#39;, &#39;/teams/PHI/2019.html&#39;, &#39;/teams/BOS/2019.html&#39;, &#39;/teams/IND/2019.html&#39;, &#39;/teams/BRK/2019.html&#39;, &#39;/teams/ORL/2019.html&#39;, &#39;/teams/DET/2019.html&#39;, &#39;/teams/CHO/2019.html&#39;, &#39;/teams/MIA/2019.html&#39;, &#39;/teams/WAS/2019.html&#39;, &#39;/teams/ATL/2019.html&#39;, &#39;/teams/CHI/2019.html&#39;, &#39;/teams/CLE/2019.html&#39;, &#39;/teams/NYK/2019.html&#39;, &#39;/teams/GSW/2019.html&#39;, &#39;/teams/DEN/2019.html&#39;, &#39;/teams/POR/2019.html&#39;, &#39;/teams/HOU/2019.html&#39;, &#39;/teams/UTA/2019.html&#39;, &#39;/teams/OKC/2019.html&#39;, &#39;/teams/SAS/2019.html&#39;, &#39;/teams/LAC/2019.html&#39;, &#39;/teams/SAC/2019.html&#39;, &#39;/teams/LAL/2019.html&#39;, &#39;/teams/MIN/2019.html&#39;, &#39;/teams/MEM/2019.html&#39;, &#39;/teams/NOP/2019.html&#39;, &#39;/teams/DAL/2019.html&#39;, &#39;/teams/PHO/2019.html&#39;, &#39;/teams/MIL/2020.html&#39;, &#39;/teams/TOR/2020.html&#39;, &#39;/teams/BOS/2020.html&#39;, &#39;/teams/IND/2020.html&#39;, &#39;/teams/MIA/2020.html&#39;, &#39;/teams/PHI/2020.html&#39;, &#39;/teams/BRK/2020.html&#39;, &#39;/teams/ORL/2020.html&#39;, &#39;/teams/CHO/2020.html&#39;, &#39;/teams/WAS/2020.html&#39;, &#39;/teams/CHI/2020.html&#39;, &#39;/teams/NYK/2020.html&#39;, &#39;/teams/DET/2020.html&#39;, &#39;/teams/ATL/2020.html&#39;, &#39;/teams/CLE/2020.html&#39;, &#39;/teams/LAL/2020.html&#39;, &#39;/teams/LAC/2020.html&#39;, &#39;/teams/DEN/2020.html&#39;, &#39;/teams/HOU/2020.html&#39;, &#39;/teams/OKC/2020.html&#39;, &#39;/teams/UTA/2020.html&#39;, &#39;/teams/DAL/2020.html&#39;, &#39;/teams/POR/2020.html&#39;, &#39;/teams/MEM/2020.html&#39;, &#39;/teams/PHO/2020.html&#39;, &#39;/teams/SAS/2020.html&#39;, &#39;/teams/SAC/2020.html&#39;, &#39;/teams/NOP/2020.html&#39;, &#39;/teams/MIN/2020.html&#39;, &#39;/teams/GSW/2020.html&#39;, &#39;/teams/PHI/2021.html&#39;, &#39;/teams/BRK/2021.html&#39;, &#39;/teams/MIL/2021.html&#39;, &#39;/teams/NYK/2021.html&#39;, &#39;/teams/ATL/2021.html&#39;, &#39;/teams/MIA/2021.html&#39;, &#39;/teams/BOS/2021.html&#39;, &#39;/teams/WAS/2021.html&#39;, &#39;/teams/IND/2021.html&#39;, &#39;/teams/CHO/2021.html&#39;, &#39;/teams/CHI/2021.html&#39;, &#39;/teams/TOR/2021.html&#39;, &#39;/teams/CLE/2021.html&#39;, &#39;/teams/ORL/2021.html&#39;, &#39;/teams/DET/2021.html&#39;, &#39;/teams/UTA/2021.html&#39;, &#39;/teams/PHO/2021.html&#39;, &#39;/teams/DEN/2021.html&#39;, &#39;/teams/LAC/2021.html&#39;, &#39;/teams/DAL/2021.html&#39;, &#39;/teams/POR/2021.html&#39;, &#39;/teams/LAL/2021.html&#39;, &#39;/teams/GSW/2021.html&#39;, &#39;/teams/MEM/2021.html&#39;, &#39;/teams/SAS/2021.html&#39;, &#39;/teams/NOP/2021.html&#39;, &#39;/teams/SAC/2021.html&#39;, &#39;/teams/MIN/2021.html&#39;, &#39;/teams/OKC/2021.html&#39;, &#39;/teams/HOU/2021.html&#39;, &#39;/teams/MIA/2022.html&#39;, &#39;/teams/BOS/2022.html&#39;, &#39;/teams/MIL/2022.html&#39;, &#39;/teams/PHI/2022.html&#39;, &#39;/teams/TOR/2022.html&#39;, &#39;/teams/CHI/2022.html&#39;, &#39;/teams/BRK/2022.html&#39;, &#39;/teams/CLE/2022.html&#39;, &#39;/teams/ATL/2022.html&#39;, &#39;/teams/CHO/2022.html&#39;, &#39;/teams/NYK/2022.html&#39;, &#39;/teams/WAS/2022.html&#39;, &#39;/teams/IND/2022.html&#39;, &#39;/teams/DET/2022.html&#39;, &#39;/teams/ORL/2022.html&#39;, &#39;/teams/PHO/2022.html&#39;, &#39;/teams/MEM/2022.html&#39;, &#39;/teams/GSW/2022.html&#39;, &#39;/teams/DAL/2022.html&#39;, &#39;/teams/UTA/2022.html&#39;, &#39;/teams/DEN/2022.html&#39;, &#39;/teams/MIN/2022.html&#39;, &#39;/teams/LAC/2022.html&#39;, &#39;/teams/NOP/2022.html&#39;, &#39;/teams/SAS/2022.html&#39;, &#39;/teams/LAL/2022.html&#39;, &#39;/teams/SAC/2022.html&#39;, &#39;/teams/POR/2022.html&#39;, &#39;/teams/OKC/2022.html&#39;, &#39;/teams/HOU/2022.html&#39;]
+<pre>Here is an example of 1 of our 685 links: /teams/MIA/2000.html
 </pre>
 </div>
 </div>
@@ -14391,9 +14396,14 @@ a.anchor-link {
     <span class="n">teamRosterDF</span><span class="p">[</span><span class="s2">&quot;Losses&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">losses</span>
     <span class="n">teamRosterDF</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Unnamed: 1&#39;</span><span class="p">:</span><span class="s1">&#39;Name&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1">#renaming the name column</span>
     <span class="n">scrapedData</span> <span class="o">=</span> <span class="n">scrapedData</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">teamRosterDF</span><span class="p">)</span> <span class="c1">#adding to the complete roster data</span>
+
+<span class="c1">#deleting rows without a name</span>
 <span class="n">scrapedData</span> <span class="o">=</span> <span class="n">scrapedData</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">])</span>
+
+<span class="c1">#deleting columns that are empty</span>
 <span class="k">del</span> <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Unnamed 22&quot;</span><span class="p">]</span>
 <span class="k">del</span> <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Unnamed 17&quot;</span><span class="p">]</span>
+
 <span class="n">scrapedData</span>
 </pre></div>
 
@@ -14745,7 +14755,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[692]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scrapedData</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#resetting the index to go from 0 to n number of rows</span>
+<span class="n">scrapedData</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">scrapedData</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;all_player_data.csv&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="n">rosterData</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;all_player_data.csv&quot;</span><span class="p">)</span>
@@ -15101,7 +15112,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[693]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Previous TS%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating new columns for our dataframe</span>
+<span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Previous TS%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Previous TRB%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Previous AST%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Previous BPM&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -15110,11 +15122,14 @@ a.anchor-link {
 <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Previous WS/48&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Rookie&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
+<span class="c1">#trying to find player within the 3 years before(accounts for injuries)</span>
+<span class="c1">#getting previous information and adding to current year column</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">currentYear</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span>
     <span class="n">previousYear</span> <span class="o">=</span> <span class="n">currentYear</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span>
     
+    <span class="c1">#skipping all players in 2000 season because there are no seasons in the DF before that one</span>
     <span class="k">if</span> <span class="n">currentYear</span> <span class="o">==</span> <span class="mi">2000</span><span class="p">:</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous TS%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous TRB%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
@@ -15125,17 +15140,24 @@ a.anchor-link {
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous WS/48&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Rookie&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
         <span class="k">continue</span>
+    
+    <span class="c1">#finding player in the dataframe</span>
     <span class="n">prevYearRow</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">previousYear</span><span class="p">)]</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1">#checks 2 years before if not in 1 year before</span>
         <span class="n">prevYearRow</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">previousYear</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="c1">#checks 3 years befoer if not in 1 year before or 2 years before</span>
             <span class="n">prevYearRow</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rosterData</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">previousYear</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)]</span>
             <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="c1">#if not within past 3 years, we assume its a rookie</span>
                 <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Rookie&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
     
+    <span class="c1">#if the player was on multiple teams, we take the row/team where he played the most games</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">prevYearRow</span> <span class="o">=</span> <span class="n">rosterData</span><span class="p">[</span><span class="n">rosterData</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="n">prevYearRow</span><span class="p">[</span><span class="s2">&quot;G&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
         
+    <span class="c1">#setting columns to previous year data if not a rookie</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Rookie&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Rookie&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous TS%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">[</span><span class="s2">&quot;TS%&quot;</span><span class="p">])</span>
@@ -15146,6 +15168,7 @@ a.anchor-link {
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous WS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">[</span><span class="s2">&quot;WS&quot;</span><span class="p">])</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous WS/48&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">prevYearRow</span><span class="p">[</span><span class="s2">&quot;WS/48&quot;</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#making all stats -50 for rookies to skip them in the later steps</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous TS%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">50</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous TRB%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">50</span>
         <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Previous AST%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">50</span>
@@ -15502,10 +15525,10 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[694]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[926]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">teamData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;TS%&quot;</span><span class="p">,</span><span class="s2">&quot;TRB%&quot;</span><span class="p">,</span><span class="s2">&quot;AST%&quot;</span><span class="p">,</span><span class="s2">&quot;BPM&quot;</span><span class="p">,</span><span class="s2">&quot;VORP&quot;</span><span class="p">,</span><span class="s2">&quot;WS&quot;</span><span class="p">,</span><span class="s2">&quot;WS/48&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#grouping by year and team, then ranking that player along each team for each advanced stat</span>
 
 <span class="k">for</span> <span class="n">previousStat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Previous VORP&#39;</span><span class="p">,</span><span class="s1">&#39;Previous TS%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous AST%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;Previous VORP&quot;</span><span class="p">,</span> <span class="s2">&quot;Previous WS&quot;</span><span class="p">,</span> <span class="s2">&quot;Previous WS/48&quot;</span><span class="p">]:</span>
     <span class="n">rosterData</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">previousStat</span><span class="si">}</span><span class="s1"> Team Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Team&quot;</span><span class="p">])[</span><span class="n">previousStat</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;first&#39;</span><span class="p">,</span><span class="n">na_option</span> <span class="o">=</span> <span class="s2">&quot;top&quot;</span><span class="p">)</span>
@@ -15526,7 +15549,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[694]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[926]:</div>
 
 
 
@@ -15560,138 +15583,138 @@ a.anchor-link {
       <th>FTr</th>
       <th>ORB%</th>
       <th>...</th>
-      <th>Previous WS</th>
-      <th>Previous WS/48</th>
-      <th>Rookie</th>
-      <th>Previous VORP Team Rank</th>
-      <th>Previous TS% Team Rank</th>
-      <th>Previous TRB% Team Rank</th>
-      <th>Previous AST% Team Rank</th>
       <th>Previous BPM Team Rank</th>
       <th>Previous WS Team Rank</th>
       <th>Previous WS/48 Team Rank</th>
+      <th>Top 5 Previous VORP Team Rank</th>
+      <th>Top 5 Previous TS% Team Rank</th>
+      <th>Top 5 Previous TRB% Team Rank</th>
+      <th>Top 5 Previous AST% Team Rank</th>
+      <th>Top 5 Previous BPM Team Rank</th>
+      <th>Top 5 Previous WS Team Rank</th>
+      <th>Top 5 Previous WS/48 Team Rank</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>Jamal Mashburn</td>
-      <td>27</td>
-      <td>76</td>
-      <td>2828</td>
-      <td>15.4</td>
-      <td>0.526</td>
-      <td>0.240</td>
-      <td>0.206</td>
-      <td>2.8</td>
+      <td>Allen Iverson</td>
+      <td>25</td>
+      <td>71</td>
+      <td>2979</td>
+      <td>24.0</td>
+      <td>0.518</td>
+      <td>0.169</td>
+      <td>0.397</td>
+      <td>1.9</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>Alonzo Mourning</td>
-      <td>29</td>
-      <td>79</td>
-      <td>2748</td>
-      <td>25.8</td>
-      <td>0.596</td>
-      <td>0.003</td>
-      <td>0.492</td>
-      <td>9.5</td>
+      <td>George Lynch</td>
+      <td>30</td>
+      <td>82</td>
+      <td>2649</td>
+      <td>12.4</td>
+      <td>0.496</td>
+      <td>0.093</td>
+      <td>0.278</td>
+      <td>8.7</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>6.0</td>
+      <td>4.0</td>
+      <td>8.0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>Dan Majerle</td>
-      <td>34</td>
-      <td>69</td>
-      <td>2308</td>
-      <td>11.4</td>
-      <td>0.559</td>
-      <td>0.720</td>
-      <td>0.164</td>
-      <td>1.4</td>
+      <td>Aaron McKie</td>
+      <td>28</td>
+      <td>76</td>
+      <td>2394</td>
+      <td>15.1</td>
+      <td>0.549</td>
+      <td>0.238</td>
+      <td>0.272</td>
+      <td>1.6</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>4.0</td>
+      <td>7.0</td>
+      <td>10.0</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>P.J. Brown</td>
-      <td>30</td>
-      <td>80</td>
-      <td>2302</td>
-      <td>15.3</td>
-      <td>0.516</td>
-      <td>0.001</td>
-      <td>0.237</td>
-      <td>11.4</td>
+      <td>Tyrone Hill</td>
+      <td>32</td>
+      <td>76</td>
+      <td>2363</td>
+      <td>12.4</td>
+      <td>0.515</td>
+      <td>0.002</td>
+      <td>0.465</td>
+      <td>11.7</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5</td>
-      <td>Anthony Carter</td>
-      <td>24</td>
-      <td>79</td>
-      <td>1859</td>
-      <td>11.0</td>
-      <td>0.442</td>
-      <td>0.045</td>
-      <td>0.244</td>
-      <td>3.1</td>
+      <td>Theo Ratliff</td>
+      <td>27</td>
+      <td>50</td>
+      <td>1800</td>
+      <td>16.3</td>
+      <td>0.562</td>
+      <td>0.000</td>
+      <td>0.475</td>
+      <td>8.0</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>...</th>
@@ -15718,7 +15741,7 @@ a.anchor-link {
       <td>...</td>
     </tr>
     <tr>
-      <th>12407</th>
+      <th>11939</th>
       <td>15</td>
       <td>Daishen Nix</td>
       <td>19</td>
@@ -15730,19 +15753,19 @@ a.anchor-link {
       <td>0.448</td>
       <td>2.9</td>
       <td>...</td>
-      <td>-50.0</td>
-      <td>-50.000</td>
-      <td>True</td>
       <td>17.0</td>
       <td>17.0</td>
       <td>17.0</td>
-      <td>17.0</td>
-      <td>17.0</td>
-      <td>17.0</td>
-      <td>17.0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>12408</th>
+      <th>11940</th>
       <td>16</td>
       <td>Usman Garuba</td>
       <td>19</td>
@@ -15754,19 +15777,19 @@ a.anchor-link {
       <td>0.159</td>
       <td>9.6</td>
       <td>...</td>
-      <td>-50.0</td>
-      <td>-50.000</td>
-      <td>True</td>
       <td>18.0</td>
       <td>18.0</td>
       <td>18.0</td>
-      <td>18.0</td>
-      <td>18.0</td>
-      <td>18.0</td>
-      <td>18.0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>12409</th>
+      <th>11941</th>
       <td>17</td>
       <td>Danuel House Jr.</td>
       <td>28</td>
@@ -15778,19 +15801,19 @@ a.anchor-link {
       <td>0.257</td>
       <td>1.9</td>
       <td>...</td>
-      <td>0.5</td>
-      <td>0.026</td>
-      <td>False</td>
-      <td>12.0</td>
-      <td>12.0</td>
-      <td>7.0</td>
-      <td>6.0</td>
       <td>12.0</td>
       <td>10.0</td>
       <td>11.0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>12410</th>
+      <th>11942</th>
       <td>18</td>
       <td>Bruno Fernando</td>
       <td>23</td>
@@ -15802,19 +15825,19 @@ a.anchor-link {
       <td>0.463</td>
       <td>12.8</td>
       <td>...</td>
-      <td>-0.1</td>
-      <td>-0.019</td>
+      <td>13.0</td>
+      <td>13.0</td>
+      <td>13.0</td>
       <td>False</td>
-      <td>13.0</td>
-      <td>13.0</td>
-      <td>1.0</td>
-      <td>12.0</td>
-      <td>13.0</td>
-      <td>13.0</td>
-      <td>13.0</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>12411</th>
+      <th>11943</th>
       <td>19</td>
       <td>Trevelin Queen</td>
       <td>24</td>
@@ -15826,20 +15849,20 @@ a.anchor-link {
       <td>0.121</td>
       <td>10.3</td>
       <td>...</td>
-      <td>-50.0</td>
-      <td>-50.000</td>
-      <td>True</td>
       <td>19.0</td>
       <td>19.0</td>
       <td>19.0</td>
-      <td>19.0</td>
-      <td>19.0</td>
-      <td>19.0</td>
-      <td>19.0</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
-<p>12412 rows × 46 columns</p>
+<p>11944 rows × 53 columns</p>
 </div>
 </div>
 
@@ -15861,7 +15884,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[695]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">previousStat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Previous VORP&#39;</span><span class="p">,</span><span class="s1">&#39;Previous TS%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous AST%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;Previous WS&quot;</span><span class="p">,</span> <span class="s2">&quot;Previous WS/48&quot;</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#adding a column to check if they are a top 5 player within their own team</span>
+<span class="k">for</span> <span class="n">previousStat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Previous VORP&#39;</span><span class="p">,</span><span class="s1">&#39;Previous TS%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous AST%&#39;</span><span class="p">,</span><span class="s1">&#39;Previous BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;Previous WS&quot;</span><span class="p">,</span> <span class="s2">&quot;Previous WS/48&quot;</span><span class="p">]:</span>
     <span class="n">rosterData</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Top 5 </span><span class="si">{</span><span class="n">previousStat</span><span class="si">}</span><span class="s1"> Team Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">rosterData</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rosterData</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">previousStat</span><span class="si">}</span><span class="s1"> Team Rank&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Top 5 </span><span class="si">{</span><span class="n">previousStat</span><span class="si">}</span><span class="s1"> Team Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">rosterData</span>
@@ -16215,12 +16239,15 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[697]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">teamStats</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="s1">&#39;Top 5 Previous VORP Team Rank&#39;</span><span class="p">],</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Previous VORP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating a new dataframe, starting by adding Previous VORP column with teams and year columns</span>
+<span class="n">teamStats</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="s1">&#39;Top 5 Previous VORP Team Rank&#39;</span><span class="p">],</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;Previous VORP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
+<span class="c1">#adding rest of advanced stats to the teamStats dataframe</span>
 <span class="k">for</span> <span class="n">previousStat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;TS%&#39;</span><span class="p">,</span><span class="s1">&#39;TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;AST%&#39;</span><span class="p">,</span><span class="s1">&#39;BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WS/48&quot;</span><span class="p">]:</span>
     <span class="n">eachStatSeries</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39;Top 5 Previous </span><span class="si">{</span><span class="n">previousStat</span><span class="si">}</span><span class="s1"> Team Rank&#39;</span><span class="p">])[</span><span class="s2">&quot;Previous &quot;</span> <span class="o">+</span> <span class="n">previousStat</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Mean &quot;</span><span class="o">+</span> <span class="n">previousStat</span><span class="p">]</span> <span class="o">=</span> <span class="n">eachStatSeries</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-    
+
+<span class="c1">#adding wins, losses, Total Games, Win %, and other formatting adjustments</span>
 <span class="n">wins</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39;Top 5 Previous VORP Team Rank&#39;</span><span class="p">])[</span><span class="s2">&quot;Wins&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
 <span class="n">losses</span> <span class="o">=</span> <span class="n">rosterData</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="sa">f</span><span class="s1">&#39;Top 5 Previous VORP Team Rank&#39;</span><span class="p">])[</span><span class="s2">&quot;Losses&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
 <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Wins&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wins</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -16229,6 +16256,7 @@ a.anchor-link {
 <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Win %&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Wins&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Total Games&quot;</span><span class="p">]</span>
 <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Mean TS%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Mean TS%&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
 
+<span class="c1">#renaming columns and more formatting</span>
 <span class="n">teamStats</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Previous VORP&quot;</span><span class="p">:</span> <span class="s2">&quot;Mean VORP&quot;</span><span class="p">,</span><span class="s2">&quot;Top 5 Previous VORP Team Rank&quot;</span><span class="p">:</span><span class="s2">&quot;With Top 5 Players&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">teamStats</span> <span class="o">=</span> <span class="n">teamStats</span><span class="p">[</span><span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;With Top 5 Players&quot;</span><span class="p">]]</span>
 <span class="n">teamStats</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -16494,10 +16522,10 @@ a.anchor-link {
 <p>This is where we start doing some exploratory analysis to better understand our data. Although a lot of these projections may not directly relate to what we’re looking for, they can show us trends that we may have not suspected exist (which can provide points for further analysis). Since we're just starting our exploratory analysis, we want to remove any rows that won't help us in this stage. As a result we removed any rows from the 1999-2000 season. This season has no previous data for the players because the actual data started from the 1999-2000 season as well.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[698]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[927]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#getting rid of players and teams in the 1999-2000 season</span>
@@ -16507,140 +16535,11 @@ a.anchor-link {
 
 <span class="n">teamStats</span> <span class="o">=</span> <span class="n">teamStats</span><span class="p">[</span><span class="n">teamStats</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">2000</span><span class="p">]</span>
 <span class="n">teamStats</span> <span class="o">=</span> <span class="n">teamStats</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">rosterData</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">teamStats</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>       Rk              Name  Age   G    MP   PER    TS%   3PAr    FTr  ORB%  \
-0       1     Allen Iverson   25  71  2979  24.0  0.518  0.169  0.397   1.9   
-1       2      George Lynch   30  82  2649  12.4  0.496  0.093  0.278   8.7   
-2       3       Aaron McKie   28  76  2394  15.1  0.549  0.238  0.272   1.6   
-3       4       Tyrone Hill   32  76  2363  12.4  0.515  0.002  0.465  11.7   
-4       5      Theo Ratliff   27  50  1800  16.3  0.562  0.000  0.475   8.0   
-...    ..               ...  ...  ..   ...   ...    ...    ...    ...   ...   
-11939  15       Daishen Nix   19  24   261   8.1  0.480  0.388  0.448   2.9   
-11940  16      Usman Garuba   19  24   239  12.9  0.510  0.455  0.159   9.6   
-11941  17  Danuel House Jr.   28  16   233   6.8  0.467  0.459  0.257   1.9   
-11942  18    Bruno Fernando   23  10    94  26.5  0.699  0.024  0.463  12.8   
-11943  19    Trevelin Queen   24  10    74  18.2  0.619  0.727  0.121  10.3   
-
-       ...  Previous BPM Team Rank  Previous WS Team Rank  \
-0      ...                     1.0                    2.0   
-1      ...                     6.0                    4.0   
-2      ...                     4.0                    7.0   
-3      ...                    10.0                    5.0   
-4      ...                     5.0                    6.0   
-...    ...                     ...                    ...   
-11939  ...                    17.0                   17.0   
-11940  ...                    18.0                   18.0   
-11941  ...                    12.0                   10.0   
-11942  ...                    13.0                   13.0   
-11943  ...                    19.0                   19.0   
-
-       Previous WS/48 Team Rank  Top 5 Previous VORP Team Rank  \
-0                           7.0                           True   
-1                           8.0                           True   
-2                          10.0                           True   
-3                           5.0                          False   
-4                           3.0                          False   
-...                         ...                            ...   
-11939                      17.0                          False   
-11940                      18.0                          False   
-11941                      11.0                          False   
-11942                      13.0                          False   
-11943                      19.0                          False   
-
-       Top 5 Previous TS% Team Rank  Top 5 Previous TRB% Team Rank  \
-0                             False                          False   
-1                             False                          False   
-2                             False                          False   
-3                             False                           True   
-4                              True                          False   
-...                             ...                            ...   
-11939                         False                          False   
-11940                         False                          False   
-11941                         False                          False   
-11942                         False                           True   
-11943                         False                          False   
-
-       Top 5 Previous AST% Team Rank  Top 5 Previous BPM Team Rank  \
-0                               True                          True   
-1                              False                         False   
-2                               True                          True   
-3                              False                         False   
-4                              False                          True   
-...                              ...                           ...   
-11939                          False                         False   
-11940                          False                         False   
-11941                          False                         False   
-11942                          False                         False   
-11943                          False                         False   
-
-       Top 5 Previous WS Team Rank  Top 5 Previous WS/48 Team Rank  
-0                             True                           False  
-1                             True                           False  
-2                            False                           False  
-3                             True                            True  
-4                            False                            True  
-...                            ...                             ...  
-11939                        False                           False  
-11940                        False                           False  
-11941                        False                           False  
-11942                        False                           False  
-11943                        False                           False  
-
-[11944 rows x 53 columns]
-     Year Team  With Top 5 Players  Mean VORP  Mean TS%  Mean TRB%  Mean AST%  \
-0    2001  ATL                True       1.34     61.56      16.04      27.92   
-1    2001  BOS                True       2.04     54.00      12.68      24.54   
-2    2001  CHH                True       1.58     54.52      13.26      25.38   
-3    2001  CHI                True       0.84     52.14      12.72      16.38   
-4    2001  CLE                True       1.32     55.22      14.56      36.22   
-..    ...  ...                 ...        ...       ...        ...        ...   
-651  2022  SAC                True       1.82     64.60      17.66      24.22   
-652  2022  SAS                True       1.30     62.20      15.56      23.80   
-653  2022  TOR                True       1.80     58.94      15.30      27.50   
-654  2022  UTA                True       2.70     66.38      18.54      23.30   
-655  2022  WAS                True       1.56     66.24      18.42      26.22   
-
-     Mean BPM  Mean WS  Mean WS/48  Wins  Losses  Total Games     Win %  
-0        1.64     4.40      0.1218    25      57           82  0.304878  
-1        1.44     5.64      0.1232    36      46           82  0.439024  
-2        0.82     6.28      0.1312    46      36           82  0.560976  
-3       -0.24     3.34      0.1026    15      67           82  0.182927  
-4        1.36     4.04      0.1294    30      52           82  0.365854  
-..        ...      ...         ...   ...     ...          ...       ...  
-651      2.66     5.06      0.1506    30      52           82  0.365854  
-652      1.24     4.24      0.1390    34      48           82  0.414634  
-653      2.22     4.56      0.1334    48      34           82  0.585366  
-654      4.02     7.24      0.1962    49      33           82  0.597561  
-655      2.44     5.00      0.1910    35      47           82  0.426829  
-
-[656 rows x 14 columns]
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -16678,25 +16577,32 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[878]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[928]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cov</span>
 
+<span class="c1">#list of advanced stats for easy use</span>
 <span class="n">advStats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VORP&#39;</span><span class="p">,</span><span class="s1">&#39;TS%&#39;</span><span class="p">,</span><span class="s1">&#39;TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;AST%&#39;</span><span class="p">,</span><span class="s1">&#39;BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WS/48&quot;</span><span class="p">]</span>
 
 <span class="n">groupedYear</span> <span class="o">=</span> <span class="n">teamStats</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
 
-
+<span class="c1">#getting all advanced stats in a scatter plot for 2001 and 2022</span>
+<span class="c1">#grouping by year to view data from each team</span>
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">groupedYear</span><span class="p">:</span>
+    <span class="c1">#only need data from 2001 and 2022, otherwise you get 147 different graphs</span>
     <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="mi">2001</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">!=</span> <span class="mi">2022</span><span class="p">:</span>
         <span class="k">continue</span>
+    
+    <span class="c1">#going through all advanced stats columns</span>
     <span class="n">yearDF</span> <span class="o">=</span> <span class="n">groupedYear</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">advStats</span><span class="p">:</span>
+        <span class="c1">#setting x and y axis of scatterplot</span>
         <span class="n">xAxis</span> <span class="o">=</span> <span class="n">yearDF</span><span class="p">[</span><span class="s2">&quot;Mean &quot;</span> <span class="o">+</span> <span class="n">stat</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">yAxis</span> <span class="o">=</span> <span class="n">yearDF</span><span class="p">[</span><span class="s2">&quot;Win %&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
+        <span class="c1">#labelling and plotting</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xAxis</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">yAxis</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Mean &quot;</span> <span class="o">+</span> <span class="n">stat</span><span class="p">)</span>
@@ -16706,6 +16612,8 @@ a.anchor-link {
         <span class="c1">#putting name of teams next to points</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">yearDF</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="p">(</span><span class="n">xAxis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">yAxis</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        
+        <span class="c1">#plotting</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -16726,18 +16634,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.10243031358885017
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -16746,18 +16642,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.03875435540069685
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -16782,18 +16666,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-0.01666376306620213
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -16802,18 +16674,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.06484320557491277
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -16838,18 +16698,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.1171951219512195
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -16858,18 +16706,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.22492160278745646
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -16894,18 +16730,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.0025726480836236933
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -16914,18 +16738,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.054053826745164
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -16950,18 +16762,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.1336648444070647
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -16970,18 +16770,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.07803195962994118
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -17006,18 +16794,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.035735912531539134
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -17026,18 +16802,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.141825063078217
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -17062,18 +16826,6 @@ a.anchor-link {
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.11430613961312025
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
@@ -17082,18 +16834,6 @@ a.anchor-link {
 >
 </div>
 
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.002271068124474348
-</pre>
-</div>
 </div>
 
 <div class="jp-OutputArea-child">
@@ -17128,14 +16868,20 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[899]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">groupedYear</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#printing correlation coefficients for every advanced stat in 2001 and 2022</span>
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">groupedYear</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">year</span> <span class="o">!=</span> <span class="mi">2001</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">!=</span> <span class="mi">2022</span><span class="p">:</span>
         <span class="k">continue</span>
+        
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation coefficients for stats vs win </span><span class="si">% i</span><span class="s2">n &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    
     <span class="n">yearDF</span> <span class="o">=</span> <span class="n">groupedYear</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">advStats</span><span class="p">:</span>
+        <span class="c1">#getting x and y axis</span>
         <span class="n">xAxis</span> <span class="o">=</span> <span class="n">yearDF</span><span class="p">[</span><span class="s2">&quot;Mean &quot;</span> <span class="o">+</span> <span class="n">stat</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">yAxis</span> <span class="o">=</span> <span class="n">yearDF</span><span class="p">[</span><span class="s2">&quot;Win %&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1">#finding pearson&#39;s correlation coefficient</span>
         <span class="n">corr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">xAxis</span><span class="p">,</span> <span class="n">yAxis</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The correlation coefficient for Mean &quot;</span> <span class="o">+</span> <span class="n">stat</span> <span class="o">+</span> <span class="s2">&quot; and win percentage in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">corr</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     
@@ -17239,7 +16985,7 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 <p>WS Hypothesis:</p>
 <p>Ho: The population correlation coefficient between WS and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between WS and team winning percentages is significantly different from zero.</p>
-<p>WS Hypothesis:</p>
+<p>WS/48 Hypothesis:</p>
 <p>Ho: The population correlation coefficient between WS/48 and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between WS/48 and team winning percentages is significantly different from zero.</p>
 <p>Our alpha = 0.05 as this is the standard and it will accommodate our data as well.</p>
@@ -17254,7 +17000,7 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[903]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[929]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -17263,8 +17009,10 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 
+<span class="c1">#all advanced stats in a list for ease of use</span>
 <span class="n">advStats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VORP&#39;</span><span class="p">,</span><span class="s1">&#39;TS%&#39;</span><span class="p">,</span><span class="s1">&#39;TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;AST%&#39;</span><span class="p">,</span><span class="s1">&#39;BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WS/48&quot;</span><span class="p">]</span>
 
+<span class="c1">#setting all regressors to none for future use</span>
 <span class="n">vorpRegressor</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">tsRegressor</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">trbRegressor</span> <span class="o">=</span> <span class="kc">None</span>
@@ -17273,26 +17021,37 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 <span class="n">wsRegressor</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">ws48Regressor</span> <span class="o">=</span> <span class="kc">None</span>
 
+<span class="c1">#pvalues and accuracies list for later use</span>
 <span class="n">pValues</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">#going through all advanced stats. making one graph for each stat. </span>
+<span class="c1">#each stat scatterplot will consist of data points for every team from every year</span>
 <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">advStats</span><span class="p">:</span>
+    <span class="c1">#using linear regression</span>
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
     
+    <span class="c1">#setting x and y axis</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Mean &quot;</span> <span class="o">+</span> <span class="n">stat</span><span class="p">]</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Win %&quot;</span><span class="p">]</span>
     
+    <span class="c1">#splitting into testing and training set. making the testing set 30% of data</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     
+    <span class="c1">#reshaping for fit/predict functions</span>
     <span class="n">X_train</span><span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     
+    <span class="c1">#getting the model</span>
     <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
     
+    <span class="c1">#getting p-value</span>
     <span class="n">X2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
     <span class="n">est</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
     <span class="n">est2</span> <span class="o">=</span> <span class="n">est</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
     <span class="n">pValues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">est2</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     
+    <span class="c1">#plotting the model on the training data</span>
     <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
     <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
     <span class="n">plt_train</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
@@ -17301,6 +17060,7 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
     <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Win %&#39;</span><span class="p">)</span>
     <span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     
+    <span class="c1">#plotting the model on the testing data</span>
     <span class="n">plt_test</span> <span class="o">=</span> <span class="n">plt</span>
     <span class="n">plt_test</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
     <span class="n">plt_test</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
@@ -17309,13 +17069,16 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
     <span class="n">plt_test</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted Win %&#39;</span><span class="p">)</span>
     <span class="n">plt_test</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     
+    <span class="c1">#predicting win % based on test set for statistic</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     
+    <span class="c1">#determine accuracy</span>
     <span class="n">accuracy</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span>
     <span class="n">accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy of &quot;</span> <span class="o">+</span> <span class="n">stat</span> <span class="o">+</span> <span class="s2">&quot; model: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>    
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value of &quot;</span> <span class="o">+</span> <span class="n">stat</span> <span class="o">+</span> <span class="s2">&quot;model: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">est2</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
     
+    <span class="c1">#setting the regressor to the correct variable. depends on stat</span>
     <span class="k">if</span> <span class="n">stat</span> <span class="o">==</span> <span class="s1">&#39;VORP&#39;</span><span class="p">:</span>
        <span class="n">vorpRegressor</span> <span class="o">=</span> <span class="n">regressor</span>
     <span class="k">elif</span> <span class="n">stat</span> <span class="o">==</span> <span class="s1">&#39;TS%&#39;</span><span class="p">:</span>
@@ -17679,7 +17442,8 @@ p-value of WS/48model: 3.034983999857896e-17
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[909]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">stat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">advStats</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#printing out p-values and accuracies found from linear regression</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">stat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">advStats</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">stat</span> <span class="o">+</span> <span class="s2">&quot; model results:&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The p-value for &quot;</span> <span class="o">+</span> <span class="n">stat</span> <span class="o">+</span> <span class="s2">&quot; model was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pValues</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy for &quot;</span> <span class="o">+</span> <span class="n">stat</span> <span class="o">+</span> <span class="s2">&quot;model on the test set was &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accuracies</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -18706,20 +18470,26 @@ Name: Residual WS Win %, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[917]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[930]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Predicted Win % by VORP&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP win% vs residual VORP win%</span>
+
+<span class="c1">#setting x and y axis</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Predicted Win % by VORP&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Residual Vorp Win %&quot;</span><span class="p">]</span>
 
+<span class="c1">#fitting line of best fit</span>
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2022 Predicted VORP Win % vs. Standard Residual VORP Win %&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Win %&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standard Residual VORP Win %&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -18728,17 +18498,25 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+
+<span class="c1">#creating scatterplot of predicted WS win% vs residual WS win%</span>
+
+<span class="c1">#setting x and y axis </span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Predicted Win % by WS&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Residual WS Win %&quot;</span><span class="p">]</span>
 
+<span class="c1">#fitting line of best fit</span>
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2022 Predicted WS Win % vs. Standard Residual WS Win %&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Win %&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standard Residual WS Win %&#39;</span><span class="p">)</span>
+
+<span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
@@ -18817,8 +18595,13 @@ Name: Residual WS Win %, dtype: float64
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[922]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">easternRankings22</span> <span class="o">=</span> <span class="n">season22</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Conference&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;East&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating eastern rankings by sorting season22 by conference</span>
+<span class="n">easternRankings22</span> <span class="o">=</span> <span class="n">season22</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Conference&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;East&#39;</span><span class="p">)]</span>
+
+<span class="c1">#only need these specific columns</span>
 <span class="n">easternRankings22</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">,</span><span class="s1">&#39;Predicted VORP Conference Rank&#39;</span><span class="p">,</span><span class="s1">&#39;Predicted WS Conference Rank&#39;</span><span class="p">]]</span>
+
+<span class="c1">#sorting based on actual rank to get decent visual understanding</span>
 <span class="n">easternRankings22</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">easternRankings22</span>
 </pre></div>
@@ -19004,8 +18787,13 @@ Name: Residual WS Win %, dtype: float64
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[923]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">westernRankings22</span> <span class="o">=</span> <span class="n">season22</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Conference&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating western rankings by sorting season22 by conference</span>
+<span class="n">westernRankings22</span> <span class="o">=</span> <span class="n">season22</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Conference&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span><span class="p">)]</span>
+
+<span class="c1">#only need these specific columns</span>
 <span class="n">westernRankings22</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Team&#39;</span><span class="p">,</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">,</span><span class="s1">&#39;Predicted VORP Conference Rank&#39;</span><span class="p">,</span><span class="s1">&#39;Predicted WS Conference Rank&#39;</span><span class="p">]]</span>
+
+<span class="c1">#sorting based on actual rank to get decent visual understanding</span>
 <span class="n">westernRankings22</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">westernRankings22</span>
 </pre></div>
@@ -19194,18 +18982,22 @@ Name: Residual WS Win %, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[820]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[931]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs actual rank for Eastern Conference</span>
+
+<span class="c1">#setting x and y axis </span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
-
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank  % vs. Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
@@ -19214,14 +19006,18 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+<span class="c1">#creating scatterplot of predicted WS rank vs actual rank for Eastern Conference</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank  % vs. Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
+
+<span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
@@ -19285,20 +19081,22 @@ Name: Residual WS Win %, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[827]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[932]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs actual rank for Western Conference</span>
+
+<span class="c1">#setting x and y axis</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
-<span class="c1"># m, b = np.polyfit(X, y, 1)</span>
-
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="c1"># plt.plot(X, m*X+b, c = &#39;b&#39;)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank  % vs. Actual Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Western Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
@@ -19307,17 +19105,20 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+
+<span class="c1">#creating scatterplot of predicted WS rank vs actual rank for Western Conference</span>
+
+<span class="c1">#setting x and y axis</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
-<span class="c1"># m, b = np.polyfit(X, y, 1)</span>
-
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="c1"># plt.plot(X, m*X+b, c = &#39;b&#39;)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank  % vs. Actual Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Western Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
@@ -19401,10 +19202,10 @@ Name: Residual WS Win %, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[839]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[933]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Last section looks at how good it is at predicting records/wins of bottom team vs top teams </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#finding residuals in the east coast</span>
 <span class="n">easternRankings22</span><span class="p">[</span><span class="s1">&#39;Residual VORP Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s1">&#39;Predicted VORP Conference Rank&#39;</span><span class="p">]</span>
 <span class="n">easternRankings22</span><span class="p">[</span><span class="s1">&#39;Residual WS Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s1">&#39;Predicted WS Conference Rank&#39;</span><span class="p">]</span>
 <span class="n">easternRankings22</span>
@@ -19423,7 +19224,7 @@ Name: Residual WS Win %, dtype: float64
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[839]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[933]:</div>
 
 
 
@@ -19623,7 +19424,8 @@ Name: Residual WS Win %, dtype: float64
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[924]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Residual VORP Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Predicted VORP Conference Rank&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#finding residuals in the west coast</span>
+<span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Residual VORP Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Predicted VORP Conference Rank&#39;</span><span class="p">]</span>
 <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Residual WS Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Actual Conference Rank&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s1">&#39;Predicted WS Conference Rank&#39;</span><span class="p">]</span>
 <span class="n">westernRankings22</span>
 </pre></div>
@@ -19847,17 +19649,23 @@ Name: Residual WS Win %, dtype: float64
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[840]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs residual VORP rank for Eastern Conference</span>
+
+<span class="c1">#setting x and y axis</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span>
 
+<span class="c1">#fitting line of best fit</span>
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank  % vs. Residual VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -19866,17 +19674,23 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+<span class="c1">#creating scatterplot of predicted WS rank vs residual WS rank for Eastern Conference</span>
+
+<span class="c1">#setting x and y axis</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span>
 
+<span class="c1">#fitting line of best fit</span>
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank  % vs. Residual WS Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual wS Eastern Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -19948,20 +19762,26 @@ Name: Residual WS Win %, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[842]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[934]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs residual VORP rank for Western Conference</span>
+
+<span class="c1">#setting x and y axis</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span>
 
+<span class="c1">#fitting line of best fit</span>
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank  % vs. Residual VORP Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual VORP Western Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -19970,17 +19790,23 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+<span class="c1">#creating scatterplot of predicted VORP rank vs residual VORP rank for Western Conference</span>
+
+<span class="c1">#setting x and y axis</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span>
 
+<span class="c1">#fitting line of best fit</span>
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+<span class="c1">#plotting and labelling</span>
 <span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank  % vs. Residual WS Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank&#39;</span><span class="p">)</span>
 <span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual wS Western Conference Rank&#39;</span><span class="p">)</span>
+
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -20059,10 +19885,13 @@ Name: Residual WS Win %, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[919]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[936]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">avgEasternVORPResidual</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#finding average residuals for both models in each conference</span>
+<span class="c1">#using absolute value so the mean doesn&#39;t result in zero</span>
+
+<span class="n">avgEasternVORPResidual</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">avgEasternWSResidual</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="n">avgWesternVORPResidual</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -20073,8 +19902,6 @@ Name: Residual WS Win %, dtype: float64
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average VORP residual in the Western Conference was: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">avgWesternVORPResidual</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average WS residual in the Western Conference was: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">avgWesternWSResidual</span><span class="p">))</span>
-<span class="c1">#not good enough</span>
-<span class="c1">#need advanced and more data</span>
 </pre></div>
 
      </div>
@@ -20128,22 +19955,21 @@ The average WS residual in the Western Conference was: 2.933333333333333
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[921]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[937]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#residual rank for all teams</span>
-<span class="c1">#first need to split east and west</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating Eastern/Western Conference Team Stats Dataframes with all years and </span>
 
 <span class="n">allEastTeamStats</span> <span class="o">=</span> <span class="n">teamStats</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Conference&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;East&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">allWestTeamStats</span> <span class="o">=</span> <span class="n">teamStats</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">teamStats</span><span class="p">[</span><span class="s2">&quot;Conference&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
+<span class="c1">#adding residual columsn for both models to each dataframe</span>
 <span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
-
 <span class="n">allWestTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">allWestTeamStats</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">allWestTeamStats</span><span class="p">[</span><span class="s2">&quot;Predicted VORP Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">allWestTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">allWestTeamStats</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">allWestTeamStats</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
 
-
+<span class="c1">#computing residual standard deviation for both models from both dataframes</span>
 <span class="n">resStdDevEasternVORP</span> <span class="o">=</span> <span class="p">((</span><span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual VORP Rank&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">resStdDevEasternWS</span> <span class="o">=</span> <span class="p">((</span><span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">allEastTeamStats</span><span class="p">[</span><span class="s2">&quot;Residual WS Rank&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
 
