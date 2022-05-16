@@ -14259,8 +14259,17 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Introduction</p>
-
+<h1 id="STARS-IN-STATS:-THE-BEST-ADVANCED-STAT">STARS IN STATS: THE BEST ADVANCED STAT<a class="anchor-link" href="#STARS-IN-STATS:-THE-BEST-ADVANCED-STAT">&#182;</a></h1>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="By-Kasra-Torshizi-and-Shabarish-Nair">By Kasra Torshizi and Shabarish Nair<a class="anchor-link" href="#By-Kasra-Torshizi-and-Shabarish-Nair">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14277,7 +14286,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[493]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[938]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Libraries/Imports</span>
@@ -14286,6 +14295,13 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">bs</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cov</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">met</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> 
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 </pre></div>
 
      </div>
@@ -14293,6 +14309,11 @@ a.anchor-link {
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Data-Collection-and-Parsing">Data Collection and Parsing<a class="anchor-link" href="#Data-Collection-and-Parsing">&#182;</a></h1>
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -15100,6 +15121,11 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Data-Management-and-Representation">Data Management and Representation<a class="anchor-link" href="#Data-Management-and-Representation">&#182;</a></h1>
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -16566,7 +16592,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exploratory-Analysis">Exploratory Analysis<a class="anchor-link" href="#Exploratory-Analysis">&#182;</a></h1>
+<h1 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16580,10 +16606,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[928]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cov</span>
-
-<span class="c1">#list of advanced stats for easy use</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#list of advanced stats for easy use</span>
 <span class="n">advStats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VORP&#39;</span><span class="p">,</span><span class="s1">&#39;TS%&#39;</span><span class="p">,</span><span class="s1">&#39;TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;AST%&#39;</span><span class="p">,</span><span class="s1">&#39;BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WS/48&quot;</span><span class="p">]</span>
 
 <span class="n">groupedYear</span> <span class="o">=</span> <span class="n">teamStats</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
@@ -16959,34 +16982,26 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Hypothesis Testing Part 1:</p>
-
+<h1 id="Hypothesis-Testing">Hypothesis Testing<a class="anchor-link" href="#Hypothesis-Testing">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We decided to get right down to the main problem at hand: finding the best statistic at predicting a team’s regular season record. To do this we decided to start testing our hypothesis.</p>
 <p>Just off visuals, we believed that VORP, WS, BPM, and WS/48 would best find the winning percentages. Now let’s make our hypothesis test for each statistic.</p>
-<p>VORP Hypothesis:</p>
-<p>Ho: The population correlation coefficient between VORP and team winning percentages is not significantly different from zero.</p>
+<h5 id="VORP-Hypothesis:">VORP Hypothesis:<a class="anchor-link" href="#VORP-Hypothesis:">&#182;</a></h5><p>Ho: The population correlation coefficient between VORP and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between VORP and team winning percentages is significantly different from zero.</p>
-<p>TS% Hypothesis:</p>
-<p>Ho: The population correlation coefficient between TS% and team winning percentages is not significantly different from zero.</p>
+<h5 id="TS%-Hypothesis:">TS% Hypothesis:<a class="anchor-link" href="#TS%-Hypothesis:">&#182;</a></h5><p>Ho: The population correlation coefficient between TS% and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between TS% and team winning percentages is significantly different from zero.</p>
-<p>TRB% Hypothesis:</p>
-<p>Ho: The population correlation coefficient between TRB% and team winning percentages is not significantly different from zero.</p>
+<h5 id="TRB%-Hypothesis:">TRB% Hypothesis:<a class="anchor-link" href="#TRB%-Hypothesis:">&#182;</a></h5><p>Ho: The population correlation coefficient between TRB% and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between TRB% and team winning percentages is significantly different from zero.</p>
-<p>AST% Hypothesis:</p>
-<p>Ho: The population correlation coefficient between AST% and team winning percentages is not significantly different from zero.</p>
+<h5 id="AST%-Hypothesis:">AST% Hypothesis:<a class="anchor-link" href="#AST%-Hypothesis:">&#182;</a></h5><p>Ho: The population correlation coefficient between AST% and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between AST% and team winning percentages is significantly different from zero.</p>
-<p>BPM Hypothesis:</p>
-<p>Ho: The population correlation coefficient between BPM and team winning percentages is not significantly different from zero.</p>
+<h6 id="BPM-Hypothesis:">BPM Hypothesis:<a class="anchor-link" href="#BPM-Hypothesis:">&#182;</a></h6><p>Ho: The population correlation coefficient between BPM and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between BPM and team winning percentages is significantly different from zero.</p>
-<p>WS Hypothesis:</p>
-<p>Ho: The population correlation coefficient between WS and team winning percentages is not significantly different from zero.</p>
+<h6 id="WS-Hypothesis:">WS Hypothesis:<a class="anchor-link" href="#WS-Hypothesis:">&#182;</a></h6><p>Ho: The population correlation coefficient between WS and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between WS and team winning percentages is significantly different from zero.</p>
-<p>WS/48 Hypothesis:</p>
-<p>Ho: The population correlation coefficient between WS/48 and team winning percentages is not significantly different from zero.</p>
+<h6 id="WS/48-Hypothesis:">WS/48 Hypothesis:<a class="anchor-link" href="#WS/48-Hypothesis:">&#182;</a></h6><p>Ho: The population correlation coefficient between WS/48 and team winning percentages is not significantly different from zero.</p>
 <p>Ha: The population correlation coefficient between WS/48 and team winning percentages is significantly different from zero.</p>
 <p>Our alpha = 0.05 as this is the standard and it will accommodate our data as well.</p>
 
@@ -16994,8 +17009,7 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>MACHINE LEARNING</p>
-
+<h3 id="MACHINE-LEARNING---Linear-Regression">MACHINE LEARNING - Linear Regression<a class="anchor-link" href="#MACHINE-LEARNING---Linear-Regression">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -17003,13 +17017,7 @@ The correlation coefficient for Mean WS/48 and win percentage in 2022: 0.5277811
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[929]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
-<span class="kn">import</span> <span class="nn">sklearn.metrics</span> <span class="k">as</span> <span class="nn">met</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-
-<span class="c1">#all advanced stats in a list for ease of use</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#all advanced stats in a list for ease of use</span>
 <span class="n">advStats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VORP&#39;</span><span class="p">,</span><span class="s1">&#39;TS%&#39;</span><span class="p">,</span><span class="s1">&#39;TRB%&#39;</span><span class="p">,</span><span class="s1">&#39;AST%&#39;</span><span class="p">,</span><span class="s1">&#39;BPM&#39;</span><span class="p">,</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WS/48&quot;</span><span class="p">]</span>
 
 <span class="c1">#setting all regressors to none for future use</span>
@@ -17436,6 +17444,11 @@ p-value of WS/48model: 3.034983999857896e-17
 <p>We learned from the model’s that VORP and WS have the best accuracy with getting the win % correct about 40% of the time. BPM and WS/48 have the second best set of accuracies with getting 12% correct and 8% correct respectively. The other stats were not accurate at all. TS% and TRB% actually had negative percentages, meaning they did not correlate with the win % at all</p>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Determining-Hypothesis-Results">Determining Hypothesis Results<a class="anchor-link" href="#Determining-Hypothesis-Results">&#182;</a></h3>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -17516,8 +17529,12 @@ The fact that our model for these statistics got 40%+ accuracy on the test set m
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Some More Exploratory Analysis!</p>
-
+<h1 id="Back-to-Explaratory-Data-Analysis!">Back to Explaratory Data Analysis!<a class="anchor-link" href="#Back-to-Explaratory-Data-Analysis!">&#182;</a></h1>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Tutorial-Case-Study:-2021-2022-NBA-Season">Tutorial Case Study: 2021-2022 NBA Season<a class="anchor-link" href="#Tutorial-Case-Study:-2021-2022-NBA-Season">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -18366,105 +18383,12 @@ The fact that our model for these statistics got 40%+ accuracy on the test set m
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Residuals for Win%</p>
-
+<h4 id="Residuals-and-Win-Percentage">Residuals and Win Percentage<a class="anchor-link" href="#Residuals-and-Win-Percentage">&#182;</a></h4>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[785]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#looking at the distribution of residuals to compare Vorp and WS</span>
-
-<span class="c1">#getting data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Residual Vorp Win %&quot;</span><span class="p">],</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Residual WS Win %&quot;</span><span class="p">]]</span>
-
-<span class="c1">#box plot labels</span>
-<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Residual VORP WIN %&quot;</span><span class="p">,</span><span class="s2">&quot;Residual WS WIN %&quot;</span><span class="p">]</span>
-
-<span class="c1">#Creating box plots</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">bplot</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">patch_artist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># vertical box plots &amp; fill with color</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1">#getting summary statistics of both distributions</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RESIDUAL VORP SUMMARY STATS:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Residual Vorp Win %&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RESIDUAL WS SUMMARY STATS:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Residual WS Win %&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>RESIDUAL VORP SUMMARY STATS:
-count    30.000000
-mean      0.032766
-std       0.114768
-min      -0.183915
-25%      -0.024668
-50%       0.020559
-75%       0.121931
-max       0.266027
-Name: Residual Vorp Win %, dtype: float64
-
-
-RESIDUAL WS SUMMARY STATS:
-count    30.000000
-mean      0.058120
-std       0.110649
-min      -0.124097
-25%      -0.023101
-50%       0.054108
-75%       0.154255
-max       0.287344
-Name: Residual WS Win %, dtype: float64
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Next, we’ll look at the residuals of both models to see how far each model was away from predicting the correct win percentage.</p>
+<p>Let's look at the residuals of both models to see how far each model was away from predicting the correct win percentage.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -18483,12 +18407,11 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2022 Predicted VORP Win % vs. Standard Residual VORP Win %&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Win %&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standard Residual VORP Win %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2022 Predicted VORP Win % vs. Standard Residual VORP Win %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Win %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standard Residual VORP Win %&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -18496,7 +18419,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
 <span class="c1">#creating scatterplot of predicted WS win% vs residual WS win%</span>
@@ -18509,12 +18432,11 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2022 Predicted WS Win % vs. Standard Residual WS Win %&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Win %&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standard Residual WS Win %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2022 Predicted WS Win % vs. Standard Residual WS Win %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Win %&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standard Residual WS Win %&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">season22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -18522,7 +18444,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18976,13 +18898,23 @@ Name: Residual WS Win %, dtype: float64
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Model-Prediction-Ranks-vs-Actual-Ranks">Model Prediction Ranks vs Actual Ranks<a class="anchor-link" href="#Model-Prediction-Ranks-vs-Actual-Ranks">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now, we’ll take a look at the predicted VORP and WS rank vs the actual conference rank for both eastern conference and western conference.</p>
 
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h6 id="Eastern-Conference">Eastern Conference<a class="anchor-link" href="#Eastern-Conference">&#182;</a></h6>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[931]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[942]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs actual rank for Eastern Conference</span>
@@ -18992,11 +18924,10 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">y</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank  % vs. Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank  % vs. Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19004,18 +18935,17 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1">#creating scatterplot of predicted WS rank vs actual rank for Eastern Conference</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Predicted WS Conference Rank&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank  % vs. Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank  % vs. Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Eastern Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19023,7 +18953,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19078,10 +19008,15 @@ Name: Residual WS Win %, dtype: float64
 <p>For the eastern conference, we can see that VORP correctly predicted the rank of 5 of the 15 teams and WS correctly predicted the rank of 2 of the 15 teams!</p>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h6 id="Western-Conference">Western Conference<a class="anchor-link" href="#Western-Conference">&#182;</a></h6>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[932]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[943]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs actual rank for Western Conference</span>
@@ -19091,11 +19026,10 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">y</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank  % vs. Actual Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank  % vs. Actual Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Western Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19103,7 +19037,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
 <span class="c1">#creating scatterplot of predicted WS rank vs actual rank for Western Conference</span>
@@ -19113,11 +19047,10 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">y</span> <span class="o">=</span> <span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Actual Conference Rank&quot;</span><span class="p">]</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank  % vs. Actual Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank  % vs. Actual Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual Western Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19125,7 +19058,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19184,13 +19117,12 @@ Name: Residual WS Win %, dtype: float64
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Back to residuals</p>
-
+<h4 id="Back-to-Residuals-Again">Back to Residuals Again<a class="anchor-link" href="#Back-to-Residuals-Again">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We are using residuals a whole lot, haha! Residuals are a great way to see how close we were to predicting the actual results. VORP might have predicted more teams correctly, but WS might have been closer overall to predicting teams that VORP did not predict correctly. WS might have also been extremely close to predicting the rankings of the team that VORP did get correctly. Let’s check that!</p>
+<p>We are using residuals a whole lot! Residuals are a great way to see how close we were to predicting the actual results. VORP might have predicted more teams correctly, but WS might have been closer overall to predicting teams that VORP did not predict correctly. WS might have also been extremely close to predicting the rankings of the team that VORP did get correctly. Let’s check that!</p>
 
 </div>
 </div>
@@ -19640,13 +19572,23 @@ Name: Residual WS Win %, dtype: float64
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Model-Rank-Prediction-vs-Residual-Ranks">Model Rank Prediction vs Residual Ranks<a class="anchor-link" href="#Model-Rank-Prediction-vs-Residual-Ranks">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Here is some analysis of more residuals. We are looking at the scatterplots for predicted Eastern conference rankings vs residual rankings for both models.</p>
 
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 id="Eastern-Conference">Eastern Conference<a class="anchor-link" href="#Eastern-Conference">&#182;</a></h5>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[840]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[944]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating scatterplot of predicted VORP rank vs residual VORP rank for Eastern Conference</span>
@@ -19659,12 +19601,11 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank  % vs. Residual VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank  % vs. Residual VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual VORP Eastern Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19672,7 +19613,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1">#creating scatterplot of predicted WS rank vs residual WS rank for Eastern Conference</span>
 
@@ -19684,12 +19625,11 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank  % vs. Residual WS Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual wS Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank  % vs. Residual WS Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Eastern Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual wS Eastern Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">easternRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19697,7 +19637,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19756,8 +19696,7 @@ Name: Residual WS Win %, dtype: float64
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Moving onto the western conference.</p>
-
+<h5 id="Western-Conference">Western Conference<a class="anchor-link" href="#Western-Conference">&#182;</a></h5>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -19775,12 +19714,11 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank  % vs. Residual VORP Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual VORP Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank  % vs. Residual VORP Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted VORP Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual VORP Western Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19788,7 +19726,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1">#creating scatterplot of predicted VORP rank vs residual VORP rank for Western Conference</span>
 
@@ -19800,12 +19738,11 @@ Name: Residual WS Win %, dtype: float64
 <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1">#plotting and labelling</span>
-<span class="n">plt_train</span> <span class="o">=</span> <span class="n">plt</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank  % vs. Residual WS Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual wS Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank  % vs. Residual WS Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted WS Western Conference Rank&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual wS Western Conference Rank&#39;</span><span class="p">)</span>
 
 <span class="c1">#putting name of teams next to points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">txt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">westernRankings22</span><span class="p">[</span><span class="s2">&quot;Team&quot;</span><span class="p">]):</span>
@@ -19813,7 +19750,7 @@ Name: Residual WS Win %, dtype: float64
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">txt</span> <span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">plt_train</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19882,6 +19819,11 @@ Name: Residual WS Win %, dtype: float64
 <p>With residuals, we were better able to see which predictor did better in some areas. However, there was no clear winner. To get a better understanding, let’s take a look at the residual values themselves from a statistical standpoint. Here are the average residuals for both models in both conferences. These averages were by first getting the absolute value of the residual to avoid the zero average.</p>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Statistics-on-Residuals">Statistics on Residuals<a class="anchor-link" href="#Statistics-on-Residuals">&#182;</a></h4>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -19934,6 +19876,66 @@ The average WS residual in the Western Conference was: 2.933333333333333
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[986]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating bar graph</span>
+
+<span class="c1">#setting x and y axis</span>
+<span class="n">xAxis</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;EC AVG VORP&quot;</span><span class="p">,</span> <span class="s2">&quot;EC AVG WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WC AVG VORP&quot;</span><span class="p">,</span> <span class="s2">&quot;WC AVG WS&quot;</span><span class="p">]</span>
+<span class="n">yAxis</span> <span class="o">=</span> <span class="p">[</span><span class="n">avgEasternVORPResidual</span><span class="p">,</span> <span class="n">avgEasternWSResidual</span><span class="p">,</span> <span class="n">avgWesternVORPResidual</span><span class="p">,</span> <span class="n">avgWesternWSResidual</span><span class="p">]</span>
+
+<span class="c1">#plotting and labelling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AVG VORP AND WS Residual Rank Averages in Eastern and Western NBA Conferences&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Combinations of Models and Conferences&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Standardized Residuals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">xAxis</span><span class="p">,</span><span class="n">yAxis</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">])</span>
+
+<span class="c1">#creating legend</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Eastern Conference&#39;</span><span class="p">:</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Western Conference&#39;</span><span class="p">:</span><span class="s1">&#39;green&#39;</span><span class="p">}</span>         
+<span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">colors</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">label</span><span class="p">])</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">#adding text</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xAxis</span><span class="p">)):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yAxis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">0.03</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yAxis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">2</span><span class="p">),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlYAAAEWCAYAAACkFdnuAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/Il7ecAAAACXBIWXMAAAsTAAALEwEAmpwYAABKkUlEQVR4nO3dd7hU1b3/8feHIl1RwYYKFoqAgIIFQaMYI7YkakzEnmuiaG5MLqk3NzeaXH+5xhRjiRKT3Bii0ahRowZ7QWIHBKQKKhEsiAUEBeXA9/fHWiPDMKdwOHI4zOf1PPOcXdZee+01++z5zlpr9lZEYGZmZmYbrlljF8DMzMxsc+HAyszMzKyBOLAyMzMzayAOrMzMzMwaiAMrMzMzswbiwMrMzMysgTiwsgYl6VRJ99ew/lFJX2mA/RwqacGG5lPPfc+T9OnG2PemTNLBkmY3djk2F415jlvDkXSepIWSlknatrHLY5+8OgdW+QPxXUmt8vxgSe9L6lAm7XOS/j1PbyHpR5Jm5/SvSrpH0meq2c8sSf9WZvk3JE3I05L0HUlzJC2X9IqkSwply2muk/RRPpnfkfSApF5F68+StCqvf0/SZEnH1lIHh0oKSd8tWd4tL/9HyfLrJV1UtO3qvL9lkhZIulnSfjXs777ifUnqUrr/omU75PkfSHq5aB9/rSH/ebn+lkl6I9dZ+5rqoDYRcUNElH1vN6ZcJ+/nY3tV0q8kNW+kskjSS5JmNMb+N5aIGB8RPeuzbcn/Y/Frpw0pUz4P9tyQPDZFkn4r6eqi+Zb5fC+37MB67qNwXWvREGWu4z4flbRC0i5Fyz4taV7RfPF1611J/yhOX5Tuolz+/euw3x6SbpH0lqQlkqZKGrWh1wxJLYFfAZ+JiPYR8faG5GdNQ50CK0ndgIOBAD4LEBFPAguAE0vS9gV6AzfmRbcCnwPOALYGdgMuB46pZnd/ymlLnZ7XAVwBnJPTdQCOAoYBN5dsc2lEtAe6AK8CfyhZ/2Re3zGvu1nSNtWUC+BM4J38t5wDJQ2pYfvX8v46AAcCs4Dxkg6vJv1jwKeK5g/J25QumxMRb0g6k1RPn877GQQ8VEN5AI7LaQcA+wD/WUv6pqR/PrZPAV8C1gnYN5JDgO2A3WsKpOtrY37wfcKezB8+xa/XGqswm3i9ll4bBgGvkM614mUAEzdWoYptQP29D/x3LWkK160dgYXAlSX7FulaWNP1upB2D+BpYD6wd0RsBZxEqr91Gg7W0/ZAa2B6fTZurC+DtmHq2mJ1BvAUcB1rn6TlgqAzgH9ExNtK3SVHAJ+LiKcj4qP8ujcivlHNvv4MDJXUtbBA0l5AP+BGSd2B84FTI+LJiKiKiOmkAG+4pGGlGUbEclLQNaDcDiNiNfB/QBtg93JpJLUFvgB8DeguaVCZZJcCF1dzXMX7i4hYEBE/An4P/KyapI8BQyQV3qeDgV8Dg0qWPZan9wPui4gX837eiIhraytPIS1wH0V1JOlASU9IWixpiqRDi9adlVthluYWslOLlv+zKN0RSq2QSyRdBaho3UWSri+aX+sbsqQvS5qZ9/GSpHPrcixljm0u8HjJsV0uab5Sa+VESQeXlOtmSWPyvqdX834jqVc+/pNrKMKZwN+BsXkaSTvlb90fB/KS9snfmFvm+X/Lx/+uUutl8f9ESPqapDnAnDocUxtJf8p5zZT0XRV1M+Xy/E3Sonw8FxSt21/ShJzvQkm/qqYuDi3Jc56kb+dv/0sk/VVS6xrqqVqSvi/pxfx+zJB0fNG6PSWNy/t4S7mVVlLh/2KKUuvGl/LyY5VaqBfn87tfSZm/J2kq8H7OOySdqdQy/pak/6qhnMcotdi/l9+Li4rWdaspr/weXZffoxmk/+fqjAP2ktQpzx8M3AS0K1n2ZESsrOf7W6i/xbn+Buf0dT4vC+eEpG9JelPS65K+XMNxQfriPEJ1aGmMiBWkL++9S1YdDOwEfAM4WdIWNWTzY+CJiBgVEa/nfGdHxCkRsTgf12fzdWCxUqvaXkXHXPY8l9QDKHSNL5b0cE7fS6kH5R2lnpwvFuV1naRrJI2V9D5wWC3vXY3XKkm7SLotb/u20jW4sK7s+6jksvx+LcnH1be298KKREStL2AuKZgZCKwEts/Ld8nzu+b5ZqRWrM/n+UuAR+uyj5L9PQD8sGj+f4E78vRI4F/VbDcO+N88fR1wcZ5uRwrYphSlPQv4Z55uQfoHXApsVU3epwOvA82Bu4AritZ1I7XmtSe1jH06L78euChPHwosKJPvMGA10K7MulbAcmCfPD+NFPg9XrLsjDx9Gukb2ndI37aa11LP84rKujPwPHB5nu8CvA0cnd/XI/J851yf7wE9c9odgT5l6rVTTvcFoCXwH0AV8JW8/iLg+jL12CLPHwPsQQrGPgV8AOxbU30W5RXAnnm6V37v/qNo/WnAtvm9/xbwBtC6qFwr8rE3J51/T5XWG7AvqZXg2BrK0TbXwdGk4P8tYIu87mHgq0Vpfw6MztOfJ/3f7ZXL+EPSxb/4+B4AtgHa1OGYLiH9f2yd3+uphfrL7+9E4EfAFqRz7CXgyLz+SeD0PN0eOLCaY13rPcn19AzpA24bYCYwspptPz5vqll/Us6nGan18X1gx7zuRuC/8rrWwNBy50Ge3xd4Ezggv7dn5nK2KirzZNK1rQ1rzsnf5fn+wIfAXjXUwd65LP1IrSmF62GNeeX3aHyuq11I/9s1neMvA8fn6btJ15IbSpb9qL7vLyX/j/U5L3N9VAE/IV0Djib9H29dzTE9CnyF1H12fV72aWBeNdettqQv+GNK8vkD6ct0S9J164Qa6vEN4Ms1rO9BOt+OyPl9N9fBFkXlKXuel9Yh6do5H/hyrr99SdeEwvXzOmAJMCS/b21ree8uopprVZ6fAlyW9/vx/0ZN7yNwZN5nR9K1dy/y/5pfdXvVngCGkoKnTnl+Fmt/QD0I/CBPH5FPkpZ5/vfATUVptwEW5xNnRQ37PA2YnaebkT68CheLH1L0IVey3U3A74pO0BV5f6tJF6F+RWnPIv3DL85lfor8z1pN3g8Cv87TI4BFRcf58T8PKQAtnNh1Cax65W27VLPfR0lB3zas+SC8pGjZaqBrUfpTc1nfJ11Qvl/DMc0DlpECyiB1G3bM674H/Lkk/X2kD6J2ud5OJH+ol9RrIbA6g7UDEpEC7zoFVmXKewfwjZrqsyhtkAKa9/P0jeQPz2rSv0vqOiyU68Gidb2B5SX19uN8LIfV8v9zWj5XWpAC5cWsOZe/AjxcVDfzgUPy/D3A2UX5NCN9IHUtOr5htey7+Jg+vhgX7btwPh0AvFKy7X8Cf8zTj+Xj7VTL/tZ6T3I9nVY0fyk5cCyz7Vms+X8svF6sYV+TSS3hAGOAa4GdqzkPigOra4D/KUkzG/hUUZn/rcw5uXPRsmeAk2uqi6K0vwYuq0te+T0aXrTuHGo+x68jfWg2IwWLbUlfPAvL3iV9IanX+0v5wGq9zst8TiwvyeNNqg/OH83nZmfS50QfygdWy/I5UgW8RurCK6wvfJn5fJ7/LfD3GupxZXG9l1n/38DNJcf8KnBobed5aR2SvhSML8n/t8CFRe/pmKJ1tb13F1HNtQoYTL72lDmmat9HUoD+Amm4SrO6nOd+rf2qS1fgmcD9EfFWnv8L1XcHng78JSJW5vm3Sa0ZAETEOxHRkdTy1Yrq3QbsqDTo8lDSP0phYPhbxXmW2DGvL/hF3l830j936cDapyKiY0R0iogDI+LBcpkqDYw8jPRtEFK3TmvKjxP7HbC9pOOqPbq1dSH94y2uZv1jpHETBwOFLrZ/Fi2bHxH/KiSONHj806RvGyOBn0g6sob9fz4iOpDquReplQnSP9hJuel7saTFpCB7x4h4n3SBGAm8rjR4tNe6WbMTKVgolC2K52sj6ShJT+Um88Wkb2Wdatms2L6kb+BfIl2g2hXl/a3cDL4k571VSd5vFE1/ALTW2mNGRpK+4T1SSxnOJF2UqyLiQ9K5Xfj/uRUYrDRA+xDSeTA+r+sKXF5U9++Qgq8uRXmvVZe1HNNOJemLp7sCO5W81z8gjQ8BOJv0rX2WpGdVy488SpTWY00/jij8PxZeexQd2xla0323GOhbdGzfJdXNM7krpKaxdF2Bb5Uc6y6k+ikod47W6TgkHSDpkdz1soR0npSes9XlVfoe/YuaFa4NewMvRcQHrLk27E1qMXqahn1/1/u8BN6OiKpqjrmsiFgEXEVq6Srn8/na3gr4d2Cc8g94gONJAdfYPH8DcJSkztXktdbnVBk7UfReRBo6Mp+1j7mu53lX4ICS9+JUYIeiNOvzv1lu34Vr1S6k3p3iui/Ot+z7GBEPk+r+N8BCSddK2rKa47EyagysJLUBvgh8SulXY2+QunP6S+qfk90GdJF0GHAC6dtjwUPAfpJ2Xp9C5QvEraSA7XRSq9dHefXDwC4q+aVHDn4OpMxg7Yh4hdTCc3k+pvV1Oqmu7sp18BIpsFpnkH0OKn8M/A9F44lqcDwwKQcr5TxGCqAOYc2H7uOkpuJDWDMOYp1yRMQtpC6fWvvHI2Ic6dvSL/Ki+aQWq+IPunYRcUlOf19EHEG6IM0iBZSlXif9cwMfDygt/vXO+6SguWCHorStgL/l8myfL6JjqVudFh9XRMTNpO6OH+W8Dya1yH2R1CXRkfTteH3yHgnsKumy6hLk834YcFrR/88XgKMldYo0fuP+XI5TgBtz8Amp/s8tqf82EfFE8eEV7au2Y3qd1AVYUPw+zAdeLtlXh4g4GiAi5kTECNIA/J8Bt0pqx0aSx378jvQBum0+tmnkY4s0lvCrEbETcC5wtaofnzMf+H8lx9o2Im4sShPVbFsXfwHuBHaJNAh6NHU/r9b6fwF2rSX9Y6TuxGNYc22YnvM4Bng20hik+r6/5ephvc7LDfRz0hfagdUliIhVEXEbsIr0xQ/SF5f2wCv5f+4WUhfeiGqyeZCSH2GVeI0UiABrXcderdthrGU+MK6k/tpHxHnFh1WSvtr3rg772lXlf0RQ4/sYEVdExEBSi2EP0vASq6PaWqw+Tzphe5MG/g4g9beOJwcVOSC4FfgjKTqeUNg4Iu4HHgHuyN/ktlAamFuXn//+idTScCJrfg1IRLxAuljdoDS4urmkPqQP4Qera3WKiAdI/yDn1GHfpc4gBUsDil4nAseo/H1J/kz6JjW8XGZ5cGAXSReSmr1/UMO+nyC1Pp1GvnhGxLukJt7TKAqslAaOHyOpg6Rmko4i/WM8Xcfj/DVwhKQBpG7M4yQdmeu4tdJA1J0lba80mLMdaYzIMtJ5UuofQB9JJ+R/7gtY+5vZZOAQSbtK2oq1f5G4BakOFwFV+Vg25DYOlwDn5G+1HUjfaBcBLST9CFjfb2RLSe/vIZIuqSbN6aQm9Z6sOW96kLoQCxf5v5DOrxPzdMFo4D/zuY2krSSdVEN5ajumm3N+W0vqQgpSCp4B3lMatN0mv999lX/BKOk0SZ3zN/XFeZty7/cnpfAhvyiX58sUfVmQdFLRl7d3c9pC+Ray9g9SfgeMzNcjSWpX+J9poLJ2AN6JiBX5y98p67Ft8Xu0M/D1mhJH+lHGQtKXxsK1IUj/799gzbWhvu/vItJQg+L6W9/zst7yF49fkloky8rv4edIYwdn5nP7cOBY1vzP9ScFjGdWk82FwEGSfq41t63ZU+l2OR1J78sxkg7Pn1/fIl33nqgmv5rcDfSQdLrS7TBaStpPRYPhS9T43tXiGVKwfkk+z1trza/Wq30fc3kOyMf6PmlIzcb8f2/yagusziT15b6SvxW+EenXY1cBpxZFwn8iRfRjyuRxAulkup70T/syqemzbNBR5DHSN+5XI+LZknX/Thq/dT3pQ/1eUt98Td86IH0D+q6K7ndVG6XuyG7Ab4rrICLuJA3+W+dbUESsIv2zlt66YSdJy3KZnyU11x+aA9CycuvdRFKQMa1o1XjSN8ziFqv3SEHaK6S6vhQ4LyL+SR3k5vcxwH9HxHzSbTJ+QLrAzid9a2mWX98iBarvkMZxnF8mv7dIg44vITW3dye1thXWPwD8ldSqNpF0nhTWLSUFYjeTPixPIbUE1EtEPE8avP0d0lixe0hBz79IF446d1EW5bmYNK7wKEn/UybJmcDVJefNG6SLWuEifyepXhZGxJSivG8nfRjcJOk90nt/VA3Fqe2YfkIK6F4mfUO/lfThUDhfjyN9CL1M6k7/PakrEdL/6vR87l5OGhO0osbKqZ/BWvc+VvtFxAzSB+yTpEBib4rOI9Kv557O5buTNA7v5bzuIuBPSl0eX8xf/L5Kuoa9S/ofPqsBj+F8Uvf7UlILaektYGryY9J79zKpJfPPddjmMdJ4pOL6WOvaUN/3N197/h/weK6/A+txXm6oyyn/oX5XLu97uYxnRvp1+OnA5Ii4v+R/7gqgn8r8ui3Sr6gHk67z05W6cP8GTACWRsRs0pfYK0l1dxzpdg8fleZVm3xd+wxwMun6+QapPst+JtXhvatpX4Vt9yR9JiwgNVbUdn3ZkvQF5F3S+fg2a3oyrA60pufBzCqFpPNIH6CfauyymJltTvxIG7MKIGlHSUNyF3FPUovj7Y1dLjOzzc2mfGdhM2s4W5B+1r0bqZv4JuDqmjYwM7P1565AMzMzswbirkAzMzOzBuKuwE1Ep06dolu3bo1dDDOzJmXixIlvRUR1N/802+gcWG0iunXrxoQJE2pPaGZmH5NU2x3qzTYqdwWaWdO3YgXsvz/07w99+sCFF5ZP9+ijMGBASvMp32nCzBqeW6zMrOlr1Qoefhjat4eVK2HoUDjqKDiw6CEPixfD+efDvffCrrvCm282WnHNbPPlFisza/qkFFRBCqxWrkzLiv3lL3DCCSmoAthuu41bRjOrCG6xMrPNw6pVMHAgzJ0LX/saHHDA2utfeCEFXIceCkuXwje+AWes8xx1MyZOnLhdixYtfk96JqUbIKzUamBaVVXVVwYOHLhO07cDKzPbPDRvDpMnpy6/44+HadOgb9Gj4aqqYOJEeOghWL4cBg9OXYU9ejRWiW0T1aJFi9/vsMMOe3Xu3PndZs2a+WaPtpbVq1dr0aJFvd94443fA58tXe9I3Mw2Lx07plape+9de/nOO8Pw4dCuHXTqBIccAlOmlMvBrG/nzp3fc1Bl5TRr1iw6d+68hNSiue76jVweM7OGt2hRaqmC1Br14IPQq9faaT73ORg/PrVcffABPP007LXXRi+qNQnNHFRZTfL5UTaGclegmTV9r78OZ56ZxlmtXg1f/CIceyyMHp3WjxyZgqjhw6FfP2jWDL7ylbW7Cs3MGoADKzNr+vr1g+eeW3f5yJFrz3/nO+llth46daL/22833OfltttS9dZb1NgP3bx584Hdu3dfXpg/4YQT3vnpT3/6xvrs5+677+7QqlWr1UccccT79S1rTZYsWdLsvPPO22X8+PEdWrVqFR07dqy69NJLFwwbNmy99/fcc8+1HjFixO6SuPXWW1/s06fPh59EmTcGB1ZmtkH0Y9WeaDMWF7rHaHPXkEFVXfNr1arV6lmzZs3YkP08/PDDHdq3b79qfQKrlStX0rJlyzqlPfXUU7t17dr1w3nz5k1r3rw5M2bM2GLq1Klt6lPWW265peNRRx21+LLLLnutrttUVVXRosWmF8Z4jJWZmVkT8e1vf3vHvn377tW9e/c+I0aM6Lp69WoALr744u322GOPPj169Oh97LHH7j579uwtxowZ03n06NHb9+rVq/e9997b/rXXXmtx5JFH7tG3b9+9+vbtu9f999/fDmDUqFE7jRgxouuQIUO6n3DCCbuNGjVqp5NOOqnb/vvv33PnnXfe++KLL17npm/Tp09v9dxzz7W7/PLLX23evDkAvXv3/ujkk09eAnDRRRdt37179z7du3fv85Of/GQ7gNmzZ2+x++679zn55JO77rnnnn2GDBnSfdmyZfrrX/+61bXXXrv9DTfc0OmAAw7oAXD11Vdvs/fee+/Vq1ev3qecckrXqqoqANq2bbvPN7/5zZ369evX66GHHmpfU7qvf/3rXXr27Nm7f//+vebPn98CYP78+S2OOOKIPXr27Nm7Z8+evR944IF2Ne2vPhxYrSdJrSU9I2mKpOmSflwmzaGSlkianF8/aoyymplZ0/Thhx8269WrV+/C63e/+93WAN/5znfenDZt2sw5c+ZMX758ebObbrppK4Arrrhih2nTps144YUXZlx33XX/6tmz50dnnHHGopEjRy6cNWvWjOHDhy8799xzdxk1atTCadOmzbz99ttfHDlyZLfC/qZOndr2vvvum3vXXXe9DDB37tzW48aNe+HZZ5+d+Ytf/GKnDz/8cK2m6cmTJ7fu3bv3B+Va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Y489dvfZs2dvMWbMmM6jR4/evnAX9tdee63FkUceuUffvn336tu37173339/O4BRo0btNGLEiK5DhgzpfsIJJ+w2atSonU466aRu+++/f8+dd95574svvni70vJOnz691XPPPdfu8ssvf7Xw3MDevXt/VHgI8kUXXbR99+7d+3Tv3r3PT37yk+0AZs+evcXuu+/e5+STT+6655579hkyZEj3ZcuW6a9//etW11577fY33HBDpwMOOKAHwNVXX73N3nvvvVevXr16n3LKKV2rqtKN69u2bbvPN7/5zZ369evX66GHHmpfU7qvf/3rXXr27Nm7f//+vebPn98CYP78+S2OOOKIPXr27Nm7Z8+evR944IF2Ne2vrhxYmW0qVq2CAQNgu+3giCPggAOqT/uHP6QWLTPb7HTr1m1lixYtYs6cOVuMGzeu3YEHHvj+oEGD3n/44Yfbjx8/vm3Pnj2XS+KCCy7Y9e9///uL06dPn3nmmWe+9e1vf7sLwBVXXLHDtGnTZrzwwgszrrvuun/17NnzozPOOGPRyJEjF86aNWvG8OHDl5177rm7jBo1auG0adNm3n777S+OHDmyW2H/U6dObXvffffNveuuu14GmDt3butx48a98Oyzz878xS9+sdOHH3641re+yZMnt+7du/cH5VqMxo8f3/Yvf/nLthMnTpw5YcKEmWPGjOn8+OOPtwF45ZVXWl9wwQVvzp07d/pWW221asyYMVt/6UtfWlIo69NPP/3CpEmTWt96663bTJgwYdasWbNmNGvWLEaPHr0twPLly5v17dt3+dSpU2d17ty5qqZ0gwcPXjZ79uwZgwcPXnbllVd2Bhg5cuSuBx988NLZs2fPmD59+ox99913RU37q6tNo93MzKB5c5g8GRYvhuOPh2nToG/pYyiBRx5JgdU//7mxS2hmG8nAgQOXPfLII+2efPLJ9t/5zncWvvLKK1s8/vjj7bbaaqtV+++//7KpU6e2mjNnTpthw4b1AFi9ejWdO3deCdCzZ8/lxx9//G6f/exnF5966qmLy+X/+OOPbzlnzpyPu+qWLVvW/N13320GMHz48MXt27f/+KbWn/nMZxa3adMm2rRpU7XNNtusXLBgQYs99thjZV2O49FHH21/9NFHL95yyy1XAxxzzDHvPvLIIx1OOumkxV26dPnwoIMOWg6wzz77fDBv3rxWpdvfe++9HaZNm9a2f//+ewGsWLGi2XbbbVcF0Lx5c84666x3a0vXsmXLKLSeDRw48P0HH3xwS4Annniiw6233voyQIsWLdh2221X/fa3v92munzqyoGV2aamY0c49FC49951A6upU+ErX0ljrLZdry9RZtaEDB48eNkTTzzRftasWW3222+/5bvvvvtHv/71r7dv3779qi9/+ctvRYT23HPP5ZMnT55Vuu0jjzwy55577ulwxx13dLz00kt3mjNnzrTSNBHBhAkTZhYHUAXt2rVbXTzfqlWrj9M0b96cqqqqtVqsBgwYsGLmzJltV61aRaErsHg/1dliiy2K843ly5ev04sWETrppJPe/s1vfvNqme1XF1rJakrXokWLaNasWWF6nfLXdX915a5As03BokWppQpg+XJ48EHo1WvtNK+8AiecAH/+M/TosdGLaGYbz6c+9allDz74YMeOHTuuatGiBdtvv/2q9957r/lzzz3X/rDDDnu/X79+K955550WDz74YDuADz/8UBMmTGi9atUqXnzxxS2OO+64pVdfffWCpUuXNl+yZEnzDh06rFq6dOnHUc/QoUPf+9nPfvbxeKknnniiXgPNAfr06fNhv3793h81atROq1enmOz5559vdf3113ccNmzYsrFjx3ZcunRps/fee6/Z2LFjtz7ssMOW1jXv4cOHv3f33Xdv/eqrr7YAWLhwYfMXXnhhi/qmKzZkyJClP//5zztDGvz+zjvvNKtPPqUcWJltCl5/HQ47DPr1g/32S2Osjj0WRo9OL4Cf/ATefhvOPz+NxRo0qFGLbFYptm2z7fqNXm6A/Pbff//lixcvbjFo0KBlhWW9evVa3r59+1U77rhjVevWreOmm2568fvf//7OPXv27N2nT5/e48aNa19VVaVTTjlltx49evTu27dv73PPPXdhp06dVp144omL//GPf3QsDF6/9tpr50+aNKldjx49eu+xxx59rrrqqs4bckzXX3/9vIULF7bs2rVr3x49evQ+++yzu+2yyy4fDR069INTTjnl7X333XevgQMH7nX66acvGjJkyPK65jtw4MAVP/zhD189/PDDe/To0aP3sGHDesyfP3+dnyrWNV2xa6655pVx48Z1KNTVpEmT2tQnn1Lys4E3DYMGDYoJEyY0djHM1pt+XG2rekWIC30NbUySJkZEg37LmDJl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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -19945,6 +19947,16 @@ The average WS residual in the Western Conference was: 2.933333333333333
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Clearly, there are not enough data points from the 2022 season to make generalizations about VORP and WS. However, we could observe some simple and obvious trends that our predictions gave us.</p>
 
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h6 id="END-OF-TUTORIAL-CASE-STUDY">END OF TUTORIAL CASE STUDY<a class="anchor-link" href="#END-OF-TUTORIAL-CASE-STUDY">&#182;</a></h6>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Applying-What-We-Learned-In-The-Case-Study">Applying What We Learned In The Case Study<a class="anchor-link" href="#Applying-What-We-Learned-In-The-Case-Study">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -20011,6 +20023,66 @@ The residual std. dev. in the Western Conference for WS was: 0.03925619834710744
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[992]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating bar graph</span>
+
+<span class="c1">#setting x and y axis</span>
+<span class="n">xAxis</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;EC AVG VORP&quot;</span><span class="p">,</span> <span class="s2">&quot;EC AVG WS&quot;</span><span class="p">,</span> <span class="s2">&quot;WC AVG VORP&quot;</span><span class="p">,</span> <span class="s2">&quot;WC AVG WS&quot;</span><span class="p">]</span>
+<span class="n">yAxis</span> <span class="o">=</span> <span class="p">[</span><span class="n">resStdDevEasternVORP</span><span class="p">,</span> <span class="n">resStdDevEasternWS</span><span class="p">,</span> <span class="n">resStdDevWesternVORP</span><span class="p">,</span> <span class="n">resStdDevWesternWS</span><span class="p">]</span>
+
+<span class="c1">#plotting and labelling</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AVG VORP AND WS Residual Rank Standard Deviation in Eastern and Western NBA Conferences&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Combination of Models and Conferences&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residual Standard Deviation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">xAxis</span><span class="p">,</span><span class="n">yAxis</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">])</span>
+
+<span class="c1">#creating legend</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Eastern Conference&#39;</span><span class="p">:</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Western Conference&#39;</span><span class="p">:</span><span class="s1">&#39;green&#39;</span><span class="p">}</span>         
+<span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">colors</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">label</span><span class="p">])</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">#adding text</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xAxis</span><span class="p">)):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yAxis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">0.001</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yAxis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">2</span><span class="p">),</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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HzNmTKtRo0bt1b1796Lnnnuu6SeffFJwwgkndO7Zs+f+PXv23P+FF15oAjBixIi2w4YN69C/f/+uZ5555n4jRoxoO2TIkI6HHHJIYfv27Q+47rrrWqeXY9asWQ3eeeedJrfeeuvS/Px8AIqKir4eOnToKoCRI0fu1bVr1x5du3bt8bvf/a41wLx58+p36tSpx9ChQzt06dKlR//+/buuXbvWHnrooeajR4/e6/7772956KGHdgO466679jjggAP27969e9E555zTobi4GIDGjRsfdOWVV7bt1atX95dffrlpWel+8pOftCssLCzq3bt398WLFxcALF68uOC4447rXFhYWFRYWFj04osvNilrfhWhAK96aQcknkfBkjgs2zQOvGBm08zs0tJmYmaXmtlUM5u6fPnySii2iIjURps2bcrr3r17Uerz17/+dXeAX/ziF5/PnDlzzoIFC2Zt2LAhb+zYsc0Bbrvttr1nzpw5e/78+bPvvffejwoLC7++4IILlg8fPnzZ3LlzZw8aNGjtZZddts+IESOWzZw5c85jjz32/vDhwzum5jdjxozGzz///MKnnnrqQ4CFCxc2nDBhwvwpU6bMuemmm9pu2rRpu3Mf06dPb1hUVLQ+UwvaxIkTGz/wwAN7Tps2bc7UqVPnjBkzptWkSZMaAXz88ccNr7jiis8XLlw4q3nz5iVjxozZ/eyzz16VKuubb745/+2332746KOP7jF16tS5c+fOnZ2Xl+ejRo3aE2DDhg15PXv23DBjxoy5rVq1Ki4r3eGHH7523rx5sw8//PC1t99+eyuA4cOH73vkkUeumTdv3uxZs2bN7tOnz8ay5lcR1a9NsW7LdNIu/SRWWWn6u/snZtYaeNHM5rr7azskdh8NjIZwk8WuFFhERGqv0k7RPvvss81uvvnmvTdu3Ji3cuXKgqKiog3AqsLCwg1nnHHGfqeeeurKc889d2WmPCdNmrTbggULtp5CXbt2bf6KFSvyAAYNGrSyadOmW49Lxx9//MpGjRp5o0aNivfYY4/NS5YsKejcufPmbMo+fvz4pieeeOLK3XbbbQvASSedtOLVV19tNmTIkJXt2rXbdMQRR2wAOOigg9YvWrSoQfr0zz33XLOZM2c27t279/4AGzduzGvdunUxQH5+PhdeeOGK8tLVq1fPU62Jffv2XffSSy/tBjB58uRmjz766IcABQUF7LnnniV/+ctf9igtn4pQgFe9LAES74SiPZB+HUCpadw99f25mT1GOOW7Q4BXWer6NWS6fkxE6qL169fbz372sw5vvvnm7C5dumweMWJE240bN+YBvPrqqwueffbZZo8//niLG264oe2CBQtmpk/v7kydOnVOMpBLadKkyZZkf4MGDbamyc/Pp7i4eLsjz4EHHrhxzpw5jUtKSkidok3OpzT169dP5usbNmzY4Yymu9uQIUO+vPPOO5emj6tfv/6WVKthWekKCgo8Ly8v1b1D+bOdX0XoFG31MgXoamb7mVl9YCjwZFqaJ4ELLDgMWOXun5pZEzNrBmBmTYDjgR1+WCIiIrti/fr1eQB777138apVq/Keeuqp3QFKSkp4//33659yyilr7rrrriVr1qzJX7VqVX6zZs1K1qxZszX6GjBgwOo//vGPW6+nmzx5coVuiADo0aPHpl69eq0bMWJE29R1gO+9916D++67r8XAgQPXjhs3rsWaNWvyVq9enTdu3LjdjznmmDXZ5j1o0KDVTz/99O5Lly4tAFi2bFn+/Pnz61c0XVL//v3X3Hjjja0g3KTx1Vdf5VUkn7KoBa8acfdiM/sx8DzhMSn/cPdZZjY8jh8FjCM8ImUh4TEpF8XJ9wIeC09RoQB4wN2f+4YXQUREcmTPPSmu7MeklJcmdQ1eqn/gwIGr7rrrrqXnnnvu8qKioh7t27f/unfv3usAiouL7ZxzztlvzZo1+e5ul1122bKWLVuWnHXWWSu/853vdH722Wdb3HLLLR+PHj168SWXXLJvt27dikpKSuzQQw9dc8QRR3xc0eW47777Fv3whz/cp0OHDj0bNWq0pUWLFiU33njj4gEDBqw/55xzvuzTp8/+AOeff/7y/v37b5g3b15WQVPfvn03XnPNNUu//e1vd9uyZQv16tXz22677eNu3bp9XZF0SXfffffHF154YYdu3bq1zMvL44477vjo2GOPXbez+ZRFDzqu43blQcc6Rbtr09f1+gOd5paaSw86luqgrAcd6xStiIiISC2jAE9ERESkllGAJyIiIlLLKMATERERqWUU4ImIiIjUMgrwRERERGoZPQdPRESkBmh5Q8veX274svKeg9doz+IvfvnFu6WN//73v79Phw4dNv3mN7/5HGDAgAFd27Vr9/VDDz30EcAPfvCD9u3atds8cuTIZdnO8+mnn27WoEGDLccdd9y6XV+CHa1atSrv8ssv32fixInNGjRo4C1atCi+4YYblgwcOHCn5/fOO+80HDZsWCcz49FHH32/R48em3JR5lxRC56IiEgNUJnBXTb59e/ff+0bb7zRFMJbKlasWFEwb968rW+dmDJlStOjjjpq7c7M85VXXmk2ceLEpjszzebNWb16FoBzzz234+677168aNGimQsXLpw1ZsyYDz///PMK1dsjjzzSYvDgwSvnzJkzO9vgrri4wq+OrXQK8ERERGQHAwcOXDtt2rSmANOmTWtUWFi4oUmTJiXLly/P37Bhg73//vsNjzjiiPUTJ05sfPDBBxf26NFj/wEDBnT96KOP6gFcd911rTt37tyjW7duRSeffHKnefPm1R8zZkyrUaNG7dW9e/ei5557ruknn3xScMIJJ3Tu2bPn/j179tz/hRdeaAIwYsSItsOGDevQv3//rmeeeeZ+I0aMaDtkyJCOhxxySGH79u0PuO6661qnl3fWrFkN3nnnnSa33nrr0tR7aYuKir4eOnToKoCRI0fu1bVr1x5du3bt8bvf/a41wLx58+p36tSpx9ChQzt06dKlR//+/buuXbvWHnrooeajR4/e6/7772956KGHdgO466679jjggAP27969e9E555zTIRXMNW7c+KArr7yyba9evbq//PLLTctK95Of/KRdYWFhUe/evbsvXry4AGDx4sUFxx13XOfCwsKiwsLCohdffLFJWfPLlgI8ERER2UHHjh03FxQU+IIFC+pPmDChyWGHHbauX79+61555ZWmEydObFxYWLjBzLjiiiv2feKJJ96fNWvWnO9973tf/PznP28HcNttt+09c+bM2fPnz5997733flRYWPj1BRdcsHz48OHL5s6dO3vQoEFrL7vssn1GjBixbObMmXMee+yx94cPH94xNf8ZM2Y0fv755xc+9dRTHwIsXLiw4YQJE+ZPmTJlzk033dR206ZN270PaPr06Q2LiorWFxTs2GA3ceLExg888MCe06ZNmzN16tQ5Y8aMaTVp0qRGAB9//HHDK6644vOFCxfOat68ecmYMWN2P/vss1elyvrmm2/Of/vttxs++uije0ydOnXu3LlzZ+fl5fmoUaP2BNiwYUNez549N8yYMWNuq1atistKd/jhh6+dN2/e7MMPP3zt7bff3gpg+PDh+x555JFr5s2bN3vWrFmz+/Tps7Gs+WVL1+CJiIhIRn379l376quvNnn99deb/uIXv1j28ccf1580aVKT5s2blxxyyCFrZ8yY0WDBggWNBg4c2A1gy5YttGrVajNAYWHhhjPOOGO/U089deW55567MlP+kyZN2m3BggVbT/uuXbs2f8WKFXkAgwYNWtm0adOtLzQ8/vjjVzZq1MgbNWpUvMcee2xesmRJQefOnbM6fzt+/PimJ5544srddtttC8BJJ5204tVXX202ZMiQle3atdt0xBFHbAA46KCD1i9atKhB+vTPPfdcs5kzZzbu3bv3/gAbN27Ma926dTFAfn4+F1544Yry0tWrV89TrYl9+/Zd99JLL+0GMHny5GaPPvrohwAFBQXsueeeJX/5y1/2KC2fbCnAExERkYwOP/zwtZMnT246d+7cRgcffPCGTp06fX3LLbfs1bRp05KLLrroC3e3Ll26bJg+ffrc9GlfffXVBc8++2yzxx9/vMUNN9zQdsGCBTPT07g7U6dOnZMM5FKaNGmyJdnfoEGDrWny8/MpLi7ergXvwAMP3DhnzpzGJSUlpE7RJudTmvr16yfz9Q0bNuxwdtPdbciQIV/eeeedSzNMvyXValhWuoKCAs/Ly0t171D+bOeXLZ2iFRERkYyOPvrotS+99FKLFi1alBQUFLDXXnuVrF69Ov+dd95peswxx6zr1avXxq+++qrgpZdeagKwadMmmzp1asOSkhLef//9+qeccsqau+66a8maNWvyV61ald+sWbOSNWvWbI2+BgwYsPqPf/zj1uvpJk+e3ChTObLRo0ePTb169Vo3YsSItlu2hNjwvffea3Dfffe1GDhw4Npx48a1WLNmTd7q1avzxo0bt/sxxxyzJtu8Bw0atPrpp5/efenSpQUAy5Yty58/f379iqZL6t+//5obb7yxFYSbNL766qu8iuSTTgGeiIhIDbBnoz0r9RbNbPI75JBDNqxcubKgX79+W++W7d69+4amTZuWtGnTprhhw4Y+duzY96+66qr2hYWFRT169CiaMGFC0+LiYjvnnHP269atW1HPnj2LLrvssmUtW7YsOeuss1Y+88wzLVI3WYwePXrx22+/3aRbt25FnTt37nHHHXe02pVluu+++xYtW7asXocOHXp269at6Pvf/37HffbZ5+sBAwasP+ec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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -20021,13 +20093,28 @@ The residual std. dev. in the Western Conference for WS was: 0.03925619834710744
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Conclusion</p>
+<h1 id="Conclusions-/-Insights">Conclusions / Insights<a class="anchor-link" href="#Conclusions-/-Insights">&#182;</a></h1>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Just looking at the data and charts, the advanced statistic that best predicted the NBA records was Value Over Replacement Player(VORP). VORP is a way to measure how many more points a player could score versus a replacement/bench player in the same situation. VORP is a highly coveted advanced statistic used throughout many sports today. An example of a player with an extremely high VORP from this year’s season is actually Nikola Jokic, this year’s Most Valuable Player. His VORP was an outrageously high, 9.8 and is 14th highest all time for a single season(MJ and Lebron are 1 and 2). Win Shares(WS) was another great way to measure how well teams did although it wasn’t as good of a metric as VORP. WS performed very closely and consistently next to VORP, but always did not measure as well. The correlation coefficient of WS was higher in our first exploratory analysis, but after looking at the number of teams VORP predicted correctly in the case study, the lower residual standard deviation, the higher accuracy in our linear regression, and lower p-value, we can safely conclude that VORP is the better metric to predict NBA rankings and record. The other metrics were nowhere close to VORP and WS in terms of p-value, accuracy, and correlation coefficient. If there were a second tier of indicators it would include BPMand WS/48. These statistics had p-values below the 0.05 threshold and positive accuracies with accuracies of 12.44% and 8.71% respectively. TS% did have a p-value lower than the threshold, but its accuracy was in the negatives, so it was not as reliable. Both the TRB% and AST% statistics were above the p-value threshold, were not statistically significant, and as a result was less reliable.</p>
+<p>However, it is also important to consider the context of these situations! These calculations were based before the season started and it factored in many assumptions. There are countless injuries happening in the NBA every year, it is highly possible a highly ranked player got injured. Rookies were not included either. Although there is a very low possibility a rookie comes onto a team and completely changes the face of the team, there are always scenarios where this has happened. The most memorable of these scenarios was Magic Johsnon stepping in for Hall-of-Famer Kareem Abdul-Jabbar, and winning the entire championship. Another factor this method does not include is breakout players. Each year, players that have not played well the year before have done outstandingly well. This season’s most improved players include Ja Morant, Marcus Smart, Dejounte Murray, Darius Garland, Jordan Poole, and much more. Any teams with these players would have overperformed according to predictions. In fact, the most improved player, Ja Morant, was the star player of the Memphis Grizzlies in the 2021-2022 NBA season. This team was also the outlier we saw in the case study, so it is evident that this scenario can occur frequently. Lastly, a possible scenario is a change of coaching. Coaching can always make or break a season for any team. For future steps, we could try updating the rosters every match to account for advanced stats from games played the same season. We could also try taking the average of the entire team, instead of just the top 5. If a team has good depth(meaning that they have many above-average players instead of just a couple great players), then the strategy of using the top 5 players would not have been sufficient. Overall, one statistic is not enough to make an accurate prediction for the overall NBA record. There are simply too many factors to account to simply use one statistic. A better method would be to update the roster’s advanced stats as the season plays on and finding more correlations between win percentages and the roster’s statistics.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Just looking at the data and charts, the advanced statistic that best predicted the NBA records was Value Over Replacement Player(VORP). VORP is a way to measure how many more points a player could score versus a replacement/bench player in the same situation. VORP is a highly coveted advanced statistic used throughout many sports today. An example of a player with an extremely high VORP from this year’s season is actually Nikola Jokic, this year’s Most Valuable Player. His VORP was an outrageously high, 9.8 and is 14th highest all time for a single season(MJ and Lebron are 1 and 2). Win Shares(WS) was another great way to measure how well teams did although it wasn’t as good of a metric as VORP. WS performed very closely and consistently next to VORP, but always did not measure as well. The correlation coefficient of WS was higher in our first exploratory analysis, but after looking at the number of teams VORP predicted correctly in the case study, the lower residual standard deviation, the higher accuracy in our linear regression, and lower p-value, we can safely conclude that VORP is the better metric to predict NBA rankings and record. The other metrics were nowhere close to VORP and WS in terms of p-value, accuracy, and correlation coefficient. If there were a second tier of indicators it would include BPMand WS/48. These statistics had p-values below the 0.05 threshold and positive accuracies with accuracies of 12.44% and 8.71% respectively. TS% did have a p-value lower than the threshold, but its accuracy was in the negatives, so it was not as reliable. Both the TRB% and AST% statistics were above the p-value threshold, were not statistically significant, and as a result was less reliable. However, it is also important to consider the context of these situations! These calculations were based before the season started and it factored in many assumptions. There are countless injuries happening in the NBA every year, it is highly possible a highly ranked player got injured. Rookies were not included either. Although there is a very low possibility a rookie comes onto a team and completely changes the face of the team, there are always scenarios where this has happened. The most memorable of these scenarios was Magic Johsnon stepping in for Hall-of-Famer Kareem Abdul-Jabbar, and winning the entire championship. Another factor this method does not include is breakout players. Each year, players that have not played well the year before have done outstandingly well. This season’s most improved players include Ja Morant, Marcus Smart, Dejounte Murray, Darius Garland, Jordan Poole, and much more. Any teams with these players would have overperformed according to predictions. In fact, the most improved player, Ja Morant, was the star player of the Memphis Grizzlies in the 2021-2022 NBA season. This team was also the outlier we saw in the case study, so it is evident that this scenario can occur frequently. Lastly, a possible scenario is a change of coaching. Coaching can always make or break a season for any team. For future steps, we could try updating the rosters every match to account for advanced stats from games played the same season. We could also try taking the average of the entire team, instead of just the top 5. If a team has good depth(meaning that they have many above-average players instead of just a couple great players), then the strategy of using the top 5 players would not have been sufficient. Overall, one statistic is not enough to make an accurate prediction for the overall NBA record. There are simply too many factors to account to simply use one statistic. A better method would be to update the roster’s advanced stats as the season plays on and finding more correlations between win percentages and the roster’s statistics.</p>
+<h2 id="References:">References:<a class="anchor-link" href="#References:">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://www.basketball-reference.com/">https://www.basketball-reference.com/</a></p>
+<p><a href="https://bleacherreport.com/articles/1813902-advanced-nba-stats-for-dummies-how-to-understand-the-new-hoops-math">https://bleacherreport.com/articles/1813902-advanced-nba-stats-for-dummies-how-to-understand-the-new-hoops-math</a></p>
+<p><a href="https://www.investopedia.com/terms/r/residual-standard-deviation.asp">https://www.investopedia.com/terms/r/residual-standard-deviation.asp</a></p>
+<p><a href="https://towardsdatascience.com/p-values-and-when-not-to-use-them-92cab8a86304">https://towardsdatascience.com/p-values-and-when-not-to-use-them-92cab8a86304</a></p>
+<p><a href="https://datagy.io/python-pearson-correlation/">https://datagy.io/python-pearson-correlation/</a></p>
 
 </div>
 </div>
